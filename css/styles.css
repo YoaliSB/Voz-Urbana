@@ -1,0 +1,45 @@
+.container-fluid {
+  font-size: 2em;
+  margin: 0px;
+  padding: 0px;
+}
+
+.col-12 {
+  padding: 0px;
+}
+
+.row {
+  margin: 0px;
+}
+
+.menu {
+  background: url(../img/concrete_wall.png);
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+}
+.menu .logo {
+  width: 180px;
+  position: absolute;
+  z-index: 2;
+  left: 39%;
+}
+.menu button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 30px 50px;
+  float: right;
+}
+
+.content .pic {
+  background: url(../img/bellas-artes.jpg);
+  height: 630px;
+  padding: 0px;
+}
+
+.footer {
+  background: url(../img/dark-triangles.png);
+}
+
+/*# sourceMappingURL=styles.css.map */
