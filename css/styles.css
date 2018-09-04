@@ -41,6 +41,13 @@
   background-color: blue;
 }
 
+.register-page .pic {
+  background: url(../img/angel.jpg);
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+}
+
 .content .pic {
   background: url(../img/bellas-artes.jpg);
   height: 630px;
@@ -63,6 +70,54 @@
 
 .login:hover {
   color: blue;
+}
+
+.container {
+  padding: 16px;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.register-form input[type=text]:focus, .register-form input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.register-form hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.register-form .registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.register-form .registerbtn :hover {
+  opacity: 1;
+}
+.register-form a {
+  color: dodgerblue;
+}
+.register-form .signin {
+  color: white;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
