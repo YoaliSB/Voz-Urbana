@@ -24,12 +24,21 @@
   z-index: 2;
   left: 39%;
 }
+.menu .register {
+  font-size: 12px;
+  margin-top: 0px;
+  padding: 0%;
+}
 .menu button {
   background: none;
   border: none;
   color: white;
-  padding: 30px 50px;
+  margin: 25px;
   float: right;
+}
+.menu button :hover {
+  color: blue;
+  background-color: blue;
 }
 
 .content .pic {
@@ -40,6 +49,20 @@
 
 .footer {
   background: url(../img/dark-triangles.png);
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.register:hover {
+  color: blue;
+}
+
+.login:hover {
+  color: blue;
 }
 
 /*# sourceMappingURL=styles.css.map */
