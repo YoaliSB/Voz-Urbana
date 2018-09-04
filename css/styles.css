@@ -1,5 +1,10 @@
+body {
+  height: 100%;
+  font-family: "Catamaran", sans-serif;
+}
+
 .container-fluid {
-  font-size: 2em;
+  font-size: 2.2em;
   margin: 0px;
   padding: 0px;
 }
@@ -13,7 +18,7 @@
 }
 
 .menu {
-  background: url(../img/concrete_wall.png);
+  background: url(../img/dark-triangles.png);
   padding: 0px;
   margin: 0px;
   position: relative;
@@ -26,9 +31,10 @@
 }
 .menu button {
   background: none;
-  border: none;
+  border: 7px solid deeppink;
   color: white;
-  padding: 30px 50px;
+  padding: 2% 3%;
+  margin: 20px 40px;
   float: right;
 }
 
@@ -36,6 +42,33 @@
   background: url(../img/bellas-artes.jpg);
   height: 630px;
   padding: 0px;
+}
+.content .slogan-text {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+  color: white;
+  padding: 3%;
+  margin: 4%;
+  bottom: 0px;
+  position: absolute;
+  border: 10px solid white;
+  width: 66%;
+  background: rgba(0, 0, 0, 0.2);
+}
+.content .blurb {
+  margin: 2%;
+  padding: 5%;
+}
+.content button {
+  border: none;
+  background-color: deeppink;
+  color: white;
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 700;
+  margin-top: 5%;
+  margin-left: 33%;
+  padding: 2% 3%;
 }
 
 .footer {
