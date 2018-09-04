@@ -1,0 +1,75 @@
+@import "mixins";
+@import "base-styles";
+
+body{
+    height:100%;
+    font-family: $font;
+}
+
+.container-fluid{
+    margin: 0px;
+    padding: 0px;
+    font-size:$big-font-size;
+    @media screen and (min-width: $big-screen) {
+        font-size:$font-size;
+    }
+}
+
+.col-12{
+    padding: 0px;
+}
+
+.row{
+    margin: 0px;
+}
+
+.menu{
+    background: url(../img/dark-triangles.png);
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    .logo{
+        @include logo;
+    }
+    .menu-button{
+        @include menu-button;
+    }
+}
+
+.content{
+    .pic{
+        background: url(../img/bellas-artes.jpg);
+        height: 630px;
+        padding: 0px;
+        background-repeat: round;
+    }
+    .slogan-text{
+        font-family: $big-font;
+        font-weight: 700;
+        font-size: 2em;
+        color: white;
+        padding: 3%;
+        margin: 4%;
+        bottom: 0px;
+        position: absolute;
+        border: 10px solid white;
+        width: 66%;
+        background: rgba(0,0,0,0.2);
+    }
+    .blurb{
+        margin: 2%;
+        padding: 5%;
+    }
+    
+    button{ 
+        margin-left: 34%;
+        @media screen and (min-width: $big-screen) {
+            margin-left:40%;
+        }
+        @include button;
+    }
+}
+
+.footer{
+    background: $texture;
+}

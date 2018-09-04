@@ -7,12 +7,12 @@ body {
   margin: 0px;
   padding: 0px;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 480px) {
   .container-fluid {
     font-size: 1.4em;
   }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 480px) {
   .container-fluid {
     font-size: 2.2em;
   }
@@ -38,30 +38,35 @@ body {
   z-index: 2;
   left: 39%;
 }
-@media screen and (min-width: 1000px) {
-  .menu .logo {
-    left: 44%;
-  }
-}
-.menu .menu-button {
+.menu button {
   background: none;
   color: white;
   margin: 20px 40px;
   float: right;
 }
-@media screen and (min-width: 1000px) {
-  .menu .menu-button {
+@media screen and (min-width: 480px) {
+  .menu button {
     padding: 1% 2%;
     border: 6px solid deeppink;
   }
 }
-@media screen and (max-width: 1000px) {
-  .menu .menu-button {
+@media screen and (max-width: 480px) {
+  .menu button {
     border: 7px solid deeppink;
     padding: 2% 3%;
   }
 }
 
+.content {
+  border: none;
+  background-color: deeppink;
+  color: white;
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 700;
+  margin-top: 5%;
+  margin-left: 33%;
+  padding: 2% 3%;
+}
 .content .pic {
   background: url(../img/bellas-artes.jpg);
   height: 630px;
@@ -85,19 +90,9 @@ body {
   margin: 2%;
   padding: 5%;
 }
-.content button {
-  border: none;
-  background-color: deeppink;
-  color: white;
-  font-family: "Hind Siliguri", sans-serif;
-  font-weight: 700;
-  margin-top: 5%;
-  margin-left: 33%;
-  padding: 2% 3%;
-}
 
 .footer {
   background: url(../img/dark-triangles.png);
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=index.css.map */
