@@ -12,34 +12,63 @@
     </head>
     <body>
         <div class="container-fluid">
-            <section class="title text-center">
+           <section class="menu-e">
                 <div class="row">
-                    <div class="col-12">
-                        <textarea placeholder="Título"></textarea>
+                    <div class="col-12 text-center">
+                        <img class="logo" alt="logo" src="img/logo.png"/>
+                        <h1>Crea tu evento</h1>
                     </div>
                 </div>
             </section>
-            <section class="event-where text-center">
-                <div class="row">
-                    <div class="col">
-                        <h1>¿Dónde?</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <textarea placeholder="Dirección"></textarea>
-                        <div class="pb-4" id="map" style="width:330px;height:100%;"></div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <div class="container-fluid">
-            <section class="event-more text-center">
-                <div class="row">
-                    <div class="col">
-                        <textarea placeholder="Descripción"></textarea>
-                    </div>
-                </div>
+            <section class="newEvent-form">
+               <form>
+                   <div class="row">
+                       <div class="col">
+                          <h1>Título</h1>
+                           <input type="text">
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="col">
+                           <h1>¿Dónde?</h1>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="col-6">
+                           <input type="text" placeholder="Dirección">
+                           <input type="text" placeholder="Descripción">
+                       </div>
+                       <div class="col-6 ">
+                           <div id="map">
+                              <br>
+                              <br> 
+                           </div>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="col">
+                          <h1>Enlace al evento</h1>
+                           <input type="text" placeholder="Link">
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="col pb-4">
+                          <h1>Fecha</h1>
+                           <input type="datetime-local">
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="col pb-4">
+                          <h1>Fotos</h1>
+                           <input type="file" name="photo" accept="image/*" multiple>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="col text-center pb-4">
+                           <button type="submit">Enviar</button>
+                       </div>
+                   </div>
+                </form>
             </section>
         </div>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtQKl2wqACda5_ytIqU1V84hLISGSmw7g&callback=myMap"></script>
