@@ -42,21 +42,20 @@
         background: none;
         border:none;
         color:white;
-        margin: 25px;
         float: right;
         :hover{
             color: blue;
             background-color: blue;
         }
+        @media screen and (max-width: 625px) {
+            width: 25%;
+            font-size: 25%;
+            
         
-    }
-    @media screen and (max-width: 625px) {
-        img{
-            vertical-align: left;   
-           
         }
         
     }
+   
 }
 .register-page{
     .pic{
