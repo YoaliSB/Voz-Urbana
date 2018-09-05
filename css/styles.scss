@@ -25,6 +25,13 @@
         position: absolute;
         z-index: 2;
         left: 39%;
+        @media screen and (max-width: 625px) {
+            
+            vertical-align: left;   
+            width: 90px;
+            
+            
+        }
     }
     .register{
         font-size: 12px;
@@ -40,6 +47,13 @@
         :hover{
             color: blue;
             background-color: blue;
+        }
+        
+    }
+    @media screen and (max-width: 625px) {
+        img{
+            vertical-align: left;   
+           
         }
         
     }
@@ -151,7 +165,7 @@ hr {
     }
 }
 
-      }
+      
       a {
         color: dodgerblue;
       }
@@ -159,7 +173,7 @@ hr {
         color: white;
         text-align: center;
       }
-  }
+  
   
 /* Create event */
 #map{
