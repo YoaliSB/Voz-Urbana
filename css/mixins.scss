@@ -1,34 +1,56 @@
 @mixin button{
-        border:none;
-        background-color: $accent-color;
-        color:white;
-        font-family: $big-font;
-        font-weight: 700;
-        margin-top: 5%;
-        padding: 2% 3%;
-    }
+   border:none;
+   background-color: $accent-color;
+   color:white;
+   font-family: $big-font;
+   font-weight: 700;
+   margin-top: 5%;
+   padding: 2% 3%;
+}
 
 @mixin logo{
-        width: 180px;
-        position: absolute;
-        z-index: 2;
-        left: 39%;
-        @media screen and (min-width: $big-screen) {
-            left:44%;
-        }
+    width: 180px;
+    position: absolute;
+    z-index: 2;
+    left: 39%;
+    @media screen and (min-width: $big-screen) {
+        left:44%;
     }
+}
     
 @mixin menu-button{
-        background: none;
-        color: white;
-        margin: 20px 40px;
-        float: right;
+    background: none;
+    color: white;
+    margin: 20px 40px;
+    float: right;
+    @media screen and (min-width: $big-screen) {
+        padding: 1% 2%;
+        border: 6px solid deeppink;
+    }
+    @media screen and (max-width: $big-screen) {
+        border: 7px solid deeppink;
+        padding: 2% 3%;
+    }
+}
+
+@mixin menu{
+    background: url(../img/dark-triangles.png);
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    color: white;
+    font-family: $big-font;
+    .logo{
+        @include logo;
+    }
+    .menu-button{
+        @include menu-button;
+    }
+    h1{
+        text-align: center;
+        padding:3%;
         @media screen and (min-width: $big-screen) {
-            padding: 1% 2%;
-            border: 6px solid deeppink;
-        }
-        @media screen and (max-width: $big-screen) {
-            border: 7px solid deeppink;
-            padding: 2% 3%;
+            padding: 1%;
         }
     }
+}

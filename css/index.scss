@@ -24,16 +24,7 @@ body{
 }
 
 .menu{
-    background: url(../img/dark-triangles.png);
-    padding: 0px;
-    margin: 0px;
-    position: relative;
-    .logo{
-        @include logo;
-    }
-    .menu-button{
-        @include menu-button;
-    }
+    @include menu;
 }
 
 .content{
