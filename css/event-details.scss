@@ -1,0 +1,88 @@
+@import "mixins";
+@import "base-styles";
+
+button{
+    @include button;
+}
+
+.details{
+    .photos{
+        background: url(../img/bache.jpg);
+        height:$photo-size;
+    }
+    .map{
+        background: url(../img/mapa.JPG);
+        height:$photo-size;
+    }
+    
+    button{
+        width:100%;
+        display: block;
+        padding: 5% 0%;
+    }
+    
+    .desc-container{
+        margin: $section-margin;
+    }
+    .desc-buttons{
+        justify-content: space-between;
+        flex-direction: column;
+        display: flex;
+        button{
+            width:100%;
+            display: block;
+            padding: 10% 0%;
+        }
+        #reportar{
+            background-color: $primary-color;
+        }
+    }
+    .link{
+        button{
+            margin-top: 0%;
+            padding: 3% 0%;
+        }
+    }
+    .sprites{
+        .sprite{
+            height:$sprite-size;
+            width:$sprite-size * 1.1;        
+        }
+        img{
+            margin:0% 5%;
+        }
+    }
+}
+
+.comments{
+    margin: $section-margin;
+    .col-12, .col-6, .col-9, .col-3{
+        padding: 0% 2%;
+    }
+    textarea{
+        width: 100%;
+        padding: $small-padding;
+        outline: 1px solid gray;
+        box-shadow: none;
+        border-bottom: none;
+    }
+    .send-button{
+        button{
+            margin-top: 0px;
+            float: right;
+        }
+    }
+    .comment-item{
+        border: 2px solid $accent-color;
+        margin: $small-margin;
+        padding: $small-padding;
+        .interactions{
+            padding: 0px;
+            text-align: center;
+            .sprite{
+                height:$sprite-size/2;
+                width:$sprite-size/2 * 1.5;  
+            }
+        }
+    }
+}

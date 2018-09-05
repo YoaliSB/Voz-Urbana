@@ -1,0 +1,51 @@
+button {
+  border: none;
+  background-color: deeppink;
+  color: white;
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 700;
+  margin-top: 5%;
+  padding: 2% 3%;
+}
+
+.details .sprite {
+  height: 100px;
+  width: 100px;
+}
+.details .photos {
+  background: url(../img/bache.jpg);
+  height: 400px;
+}
+.details .map {
+  background: url(../img/mapa.JPG);
+  height: 400px;
+}
+.details button {
+  width: 100%;
+  display: block;
+  padding: 5% 0%;
+}
+.details .desc-container, .details .comments {
+  margin: 6% 0%;
+}
+.details .desc-buttons {
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+}
+.details .desc-buttons button {
+  width: 100%;
+  display: block;
+  padding: 10% 0%;
+}
+.details .desc-buttons #reportar {
+  background-color: black;
+}
+.details .link button {
+  margin-top: 0%;
+}
+.details .sprites img {
+  margin: 0% 5%;
+}
+
+/*# sourceMappingURL=event-details.css.map */
