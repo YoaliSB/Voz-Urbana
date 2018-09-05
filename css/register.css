@@ -1,0 +1,179 @@
+.menu {
+  background: url(../img/dark-triangles.png);
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  color: white;
+  font-family: "Hind Siliguri", sans-serif;
+}
+.menu .logo {
+  width: 180px;
+  position: absolute;
+  z-index: 2;
+  left: 39%;
+}
+@media screen and (min-width: 1000px) {
+  .menu .logo {
+    left: 44%;
+  }
+}
+.menu .menu-button {
+  background: none;
+  color: white;
+  margin: 20px 40px;
+  float: right;
+}
+@media screen and (min-width: 1000px) {
+  .menu .menu-button {
+    padding: 1% 2%;
+    border: 6px solid deeppink;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .menu .menu-button {
+    border: 7px solid deeppink;
+    padding: 2% 3%;
+  }
+}
+.menu h1 {
+  text-align: center;
+  padding: 3%;
+}
+@media screen and (min-width: 1000px) {
+  .menu h1 {
+    padding: 1%;
+  }
+}
+.menu .logo {
+  width: 180px;
+  position: absolute;
+  z-index: 2;
+  left: 39%;
+}
+@media screen and (max-width: 625px) {
+  .menu .logo {
+    vertical-align: left;
+    width: 90px;
+  }
+}
+.menu .register {
+  margin-top: 0px;
+  padding: 0%;
+}
+.menu button {
+  background: none;
+  border: none;
+  color: white;
+  float: right;
+}
+.menu button :hover {
+  color: blue;
+  background-color: blue;
+}
+@media screen and (max-width: 625px) {
+  .menu button {
+    width: 25%;
+    font-size: 25%;
+  }
+}
+
+.register-page .pic {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+}
+
+.footer {
+  background: url(../img/dark-triangles.png);
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.register:hover {
+  color: blue;
+}
+
+.login:hover {
+  color: blue;
+}
+
+.container {
+  padding: 16px;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.register-form input[type=text]:focus, .register-form input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.register-form hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.register-form .registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.register-form .registerbtn :hover {
+  opacity: 1;
+}
+.register-form a {
+  color: dodgerblue;
+}
+.register-form .signin {
+  color: white;
+  text-align: center;
+}
+
+.footer {
+  color: white;
+  font-size: 25px;
+}
+.footer button {
+  background-color: #2ba8d1;
+  border-color: #2ba8d1;
+  border-radius: 4px;
+}
+.footer button :hover {
+  background-color: #0e4253;
+}
+.footer .contact {
+  width: 100%;
+}
+@media screen and (max-width: 625px) {
+  .footer img {
+    width: 50px;
+    height: 50px;
+    margin-left: 45%;
+  }
+}
+
+.signin {
+  color: white;
+  text-align: center;
+}
+
+/*# sourceMappingURL=register.css.map */

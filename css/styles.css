@@ -1,23 +1,15 @@
-.container-fluid {
-  font-size: 2em;
-  margin: 0px;
-  padding: 0px;
+.container1 {
+  font-size: 2.2em !important;
+}
+@media screen and (min-width: 1000px) {
+  .container1 {
+    font-size: 1.4em !important;
+  }
 }
 
 body {
   height: 100%;
   font-family: "Catamaran", sans-serif;
-}
-
-.container-fluid {
-  margin: 0px;
-  padding: 0px;
-  font-size: 2.2em;
-}
-@media screen and (min-width: 1000px) {
-  .container-fluid {
-    font-size: 1.4em;
-  }
 }
 
 .col-12 {
@@ -128,6 +120,15 @@ button {
   padding: 2% 3%;
 }
 
+.container1 {
+  font-size: 2.2em;
+}
+@media screen and (min-width: 1000px) {
+  .container1 {
+    font-size: 1.4em;
+  }
+}
+
 .details .photos {
   background: url(../img/bache.jpg);
   height: 400px;
@@ -200,15 +201,177 @@ button {
   width: 60px;
 }
 
-.row {
-  margin: 0px;
+.user-profile img {
+  width: 90px;
+  position: absolute;
+  z-index: 2;
+  right: 5%;
+  top: 2%;
 }
-
-.menu {
-  background: url(../img/concrete_wall.png);
+.user-profile .logo1 {
+  position: absolute;
+  left: 13px;
+  top: 11px;
+  width: 52px !important;
+}
+.user-profile menu {
+  background: url(../img/dark-triangles.png);
   padding: 0px;
   margin: 0px;
   position: relative;
+  color: white;
+  font-family: "Hind Siliguri", sans-serif;
+}
+.user-profile menu .logo {
+  width: 180px;
+  position: absolute;
+  z-index: 2;
+  left: 39%;
+}
+@media screen and (min-width: 1000px) {
+  .user-profile menu .logo {
+    left: 44%;
+  }
+}
+.user-profile menu .menu-button {
+  background: none;
+  color: white;
+  margin: 20px 40px;
+  float: right;
+}
+@media screen and (min-width: 1000px) {
+  .user-profile menu .menu-button {
+    padding: 1% 2%;
+    border: 6px solid deeppink;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .user-profile menu .menu-button {
+    border: 7px solid deeppink;
+    padding: 2% 3%;
+  }
+}
+.user-profile menu h1 {
+  text-align: center;
+  padding: 3%;
+}
+@media screen and (min-width: 1000px) {
+  .user-profile menu h1 {
+    padding: 1%;
+  }
+}
+
+#map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.h1-1 {
+  font-size: 1em;
+}
+
+.menu-e {
+  background: url(../img/dark-triangles.png);
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  color: white;
+  font-family: "Hind Siliguri", sans-serif;
+  margin-bottom: 2%;
+}
+.menu-e .logo {
+  width: 180px;
+  position: absolute;
+  z-index: 2;
+  left: 39%;
+}
+@media screen and (min-width: 1000px) {
+  .menu-e .logo {
+    left: 44%;
+  }
+}
+.menu-e .menu-button {
+  background: none;
+  color: white;
+  margin: 20px 40px;
+  float: right;
+}
+@media screen and (min-width: 1000px) {
+  .menu-e .menu-button {
+    padding: 1% 2%;
+    border: 6px solid deeppink;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .menu-e .menu-button {
+    border: 7px solid deeppink;
+    padding: 2% 3%;
+  }
+}
+.menu-e h1 {
+  text-align: center;
+  padding: 3%;
+}
+@media screen and (min-width: 1000px) {
+  .menu-e h1 {
+    padding: 1%;
+  }
+}
+
+.newEvent-form input {
+  width: 100%;
+}
+
+.container-fluid {
+  font-size: 1em;
+}
+
+.menu {
+  background: url(../img/dark-triangles.png);
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  color: white;
+  font-family: "Hind Siliguri", sans-serif;
+}
+.menu .logo {
+  width: 180px;
+  position: absolute;
+  z-index: 2;
+  left: 39%;
+}
+@media screen and (min-width: 1000px) {
+  .menu .logo {
+    left: 44%;
+  }
+}
+.menu .menu-button {
+  background: none;
+  color: white;
+  margin: 20px 40px;
+  float: right;
+}
+@media screen and (min-width: 1000px) {
+  .menu .menu-button {
+    padding: 1% 2%;
+    border: 6px solid deeppink;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .menu .menu-button {
+    border: 7px solid deeppink;
+    padding: 2% 3%;
+  }
+}
+.menu h1 {
+  text-align: center;
+  padding: 3%;
+}
+@media screen and (min-width: 1000px) {
+  .menu h1 {
+    padding: 1%;
+  }
 }
 .menu .logo {
   width: 180px;
@@ -223,7 +386,6 @@ button {
   }
 }
 .menu .register {
-  font-size: 12px;
   margin-top: 0px;
   padding: 0%;
 }
@@ -231,34 +393,16 @@ button {
   background: none;
   border: none;
   color: white;
-  margin: 25px;
   float: right;
 }
-.menu button :hover {
-  color: blue;
-  background-color: blue;
-}
-@media screen and (max-width: 625px) {
-  .menu img {
-    vertical-align: left;
-  }
+.menu .login-button {
+  font-size: 0.8em;
 }
 
 .register-page .pic {
-  background: url(../img/angel.jpg);
   height: 100%;
   width: 100%;
   padding: 0px;
-}
-
-.content .pic {
-  background: url(../img/bellas-artes.jpg);
-  height: 630px;
-  padding: 0px;
-}
-
-.footer {
-  background: url(../img/dark-triangles.png);
 }
 
 .button1 {
@@ -276,15 +420,10 @@ button {
 }
 
 .container {
-  padding: 16px;
+  padding: 6px;
 }
 
-/* Add padding to containers */
-.container {
-  padding: 16px;
-}
-
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=email] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -293,7 +432,7 @@ input[type=text], input[type=password] {
   background: #f1f1f1;
 }
 
-.register-form input[type=text]:focus, .register-form input[type=password]:focus {
+.register-form input[type=text]:focus, .register-form input[type=password]:focus, .register-form input[type=email]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -302,10 +441,13 @@ input[type=text], input[type=password] {
   margin-bottom: 25px;
 }
 .register-form .registerbtn {
-  background-color: #4CAF50;
+  border: none;
+  background-color: deeppink;
   color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 700;
+  margin-top: 5%;
+  padding: 2% 3%;
   border: none;
   cursor: pointer;
   width: 100%;
@@ -314,11 +456,7 @@ input[type=text], input[type=password] {
 .register-form .registerbtn :hover {
   opacity: 1;
 }
-.register-form a {
-  color: dodgerblue;
-}
 .register-form .signin {
-  color: white;
   text-align: center;
 }
 
@@ -327,12 +465,13 @@ input[type=text], input[type=password] {
   font-size: 25px;
 }
 .footer button {
-  background-color: #2ba8d1;
-  border-color: #2ba8d1;
-  border-radius: 4px;
-}
-.footer button :hover {
-  background-color: #0e4253;
+  border: none;
+  background-color: deeppink;
+  color: white;
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 700;
+  margin-top: 5%;
+  padding: 2% 3%;
 }
 .footer .contact {
   width: 100%;
@@ -345,50 +484,17 @@ input[type=text], input[type=password] {
   }
 }
 
-a {
-  color: dodgerblue;
-}
-
-.signin {
-  color: white;
-  text-align: center;
-}
-
-/* Create event */
-#map {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.menu-e {
-  background: url(../img/concrete_wall.png);
-  padding: 0px;
+.container-fluid {
   margin: 0px;
-  height: 50px;
-  position: relative;
-  color: white;
-}
-.menu-e .logo {
-  width: 50px;
-  max-height: 45px;
-  position: absolute;
-  z-index: 2;
-  left: 2%;
-  top: 5%;
+  padding: 0px;
 }
 
-.newEvent-form input {
-  width: 100%;
+a {
+  color: deeppink !important;
 }
 
-/* User profile */
-.user-profile img {
-  width: 90px;
-  position: absolute;
-  z-index: 2;
-  right: 5%;
-  top: 2%;
+.row {
+  margin: 0px;
 }
 
 /*# sourceMappingURL=styles.css.map */

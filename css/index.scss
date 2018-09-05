@@ -1,18 +1,16 @@
 @import "mixins";
 @import "base-styles";
 
+.container1{
+    font-size:$big-font-size !important;
+    @media screen and (min-width: $big-screen) {
+        font-size:$font-size !important;
+    }
+}
+
 body{
     height:100%;
     font-family: $font;
-}
-
-.container-fluid{
-    margin: 0px;
-    padding: 0px;
-    font-size:$big-font-size;
-    @media screen and (min-width: $big-screen) {
-        font-size:$font-size;
-    }
 }
 
 .col-12{
@@ -62,5 +60,5 @@ body{
 }
 
 .footer{
-    background: $texture;
+    @include footer;
 }

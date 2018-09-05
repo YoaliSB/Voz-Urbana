@@ -5,6 +5,13 @@ button{
     @include button;
 }
 
+.container1{
+    font-size:$big-font-size;
+    @media screen and (min-width: $big-screen) {
+        font-size:$font-size;
+    }
+}
+
 .details{
     .photos{
         background: url(../img/bache.jpg);

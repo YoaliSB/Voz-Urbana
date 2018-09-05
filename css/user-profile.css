@@ -1,0 +1,55 @@
+.user-profile img {
+  width: 90px;
+  position: absolute;
+  z-index: 2;
+  right: 5%;
+  top: 2%;
+}
+.user-profile menu {
+  background: url(../img/dark-triangles.png);
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  color: white;
+  font-family: "Hind Siliguri", sans-serif;
+}
+.user-profile menu .logo {
+  width: 180px;
+  position: absolute;
+  z-index: 2;
+  left: 39%;
+}
+@media screen and (min-width: 1000px) {
+  .user-profile menu .logo {
+    left: 44%;
+  }
+}
+.user-profile menu .menu-button {
+  background: none;
+  color: white;
+  margin: 20px 40px;
+  float: right;
+}
+@media screen and (min-width: 1000px) {
+  .user-profile menu .menu-button {
+    padding: 1% 2%;
+    border: 6px solid deeppink;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .user-profile menu .menu-button {
+    border: 7px solid deeppink;
+    padding: 2% 3%;
+  }
+}
+.user-profile menu h1 {
+  text-align: center;
+  padding: 3%;
+}
+@media screen and (min-width: 1000px) {
+  .user-profile menu h1 {
+    padding: 1%;
+  }
+}
+
+/*# sourceMappingURL=user-profile.css.map */

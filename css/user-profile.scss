@@ -1,0 +1,21 @@
+@import "base-styles";
+@import "mixins";
+
+.user-profile{
+    img{
+        width: 90px;
+        position: absolute;
+        z-index: 2;
+        right: 5%;
+        top: 2%;
+    }
+    .logo1{
+        position:absolute;
+        left: 13px;
+        top: 11px;
+        width: 52px !important;
+    }
+    menu{
+        @include menu
+    }
+}
