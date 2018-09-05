@@ -60,6 +60,8 @@
 .register-page{
     .pic{
     background: url(../img/angel.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 100%;
     width: 100%;
     padding: 0px;
@@ -68,6 +70,8 @@
 .content{
     .pic{
         background: url(../img/bellas-artes.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
         height: 630px;
         padding: 0px;
     }
@@ -214,4 +218,14 @@ hr {
         right: 5%;
         top: 2%;
     }
+}
+
+.footImg{
+    height: 95%;
+    width: 75%;
+}
+
+.iconsF{
+    height: 50px;
+    width: 50px;
 }
