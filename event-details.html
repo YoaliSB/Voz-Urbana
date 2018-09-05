@@ -35,13 +35,13 @@
                     <p>Bache en la Narvarte entre Eje 5 y Yácatas. Reportado el 3 de septiembre y aún esperando reparación. Cuidado, cuando llueve no se ve. </p>
                 </div>
                 <div class="col-3 desc-buttons">
-                    <button id="reportar">911</button>
-                    <button id="quejas">Quejas</button>
+                    <button id="reportar" onclick="javascript:alert('Se llamará al policía más cercano'); window.location.href = 'tel:911';">911</button>
+                    <button id="quejas" onclick="javascript:alert('Tu queja será tomada en cuenta');">Quejas</button>
                 </div> 
             </div>
             <div class="row">
                 <div class="col-6 link">
-                    <button>Más info</button>
+                    <button onclick="javascript:window.location.href = 'exploreEvent.html'">Más info</button>
                 </div>
                 <div class="col-6 sprites">
                     <img alt="" class="sprite" src="img/twitter.png"/>
@@ -58,7 +58,7 @@
             </div>
             <div class="row">
                 <div class="col-12 send-button">
-                    <button>Enviar</button>
+                    <button onclick="javascript:alert('Comentario enviado');">Enviar</button>
                 </div>
             </div>
             <div class="row comment-item">
