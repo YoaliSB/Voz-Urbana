@@ -81,7 +81,6 @@
   padding: 16px;
 }
 
-/* Full-width input fields */
 input[type=text], input[type=password] {
   width: 100%;
   padding: 15px;
@@ -118,6 +117,19 @@ input[type=text], input[type=password] {
 .register-form .signin {
   color: white;
   text-align: center;
+}
+
+.footer {
+  color: white;
+  font-size: 25px;
+}
+.footer button {
+  background-color: lightblue;
+  margin: 0px;
+  padding: 0px;
+}
+.footer .contact {
+  width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */
