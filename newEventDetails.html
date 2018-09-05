@@ -21,11 +21,11 @@
                 </div>
             </section>
             <section class="newEvent-form">
-               <form>
+               <form action="javascript:alert('¡Evento creado exitosamente!'); window.location.href = 'event-details.html';">
                    <div class="row">
                        <div class="col">
                           <h1>Título</h1>
-                           <input type="text">
+                           <input id="titulo" type="text" required>
                        </div>
                    </div>
                    <div class="row">
@@ -35,8 +35,8 @@
                    </div>
                    <div class="row">
                        <div class="col-6">
-                           <input type="text" placeholder="Dirección">
-                           <input type="text" placeholder="Descripción">
+                           <input type="text" name="direccion" placeholder="Dirección" required>
+                           <input type="text" name="descripcion" placeholder="Descripción" required>
                        </div>
                        <div class="col-6 ">
                            <div id="map">
@@ -48,24 +48,24 @@
                    <div class="row">
                        <div class="col">
                           <h1>Enlace al evento</h1>
-                           <input type="text" placeholder="Link">
+                           <input name="link" type="text" placeholder="Link">
                        </div>
                    </div>
                    <div class="row">
                        <div class="col pb-4">
                           <h1>Fecha</h1>
-                           <input type="datetime-local">
+                           <input name="fecha" class="form-control" type="datetime-local" required>
                        </div>
                    </div>
                    <div class="row">
                        <div class="col pb-4">
                           <h1>Fotos</h1>
-                           <input type="file" name="photo" accept="image/*" multiple>
+                           <input name="fotos" class="form-control" type="file" name="photo" accept="image/*" multiple>
                        </div>
                    </div>
                    <div class="row">
                        <div class="col text-center pb-4">
-                           <button type="submit">Enviar</button>
+                           <button class="btn btn-outline-dark" type="submit">Enviar</button>
                        </div>
                    </div>
                 </form>

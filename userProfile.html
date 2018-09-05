@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Tu perfil</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="Author" content="Ana Karen Campos García"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <script type="text/javascript" src="js/maps.js"></script>
+    </head>
+    <body>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+<br>
+
+<div class="container user-profile">
+  <h2 class="text-center">Yoali ✌🏻</h2>
+  <img alt="user_img" src="img/user.png">
+  <br>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#home">Publicado</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu1">Salvado</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu2">Editar</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+      <h3 class="pb-2">Eventos publicados</h3>
+        <table class="table table-hover">
+    <tbody>
+      <tr>
+        <td>Carne asada</td>
+      </tr>
+      <tr>
+        <td>Humo en Paseo Acoxpa</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+    <div id="menu1" class="container tab-pane fade"><br>
+      <h3 class="pb-2">Eventos salvados</h3>
+        <table class="table table-hover">
+    <tbody>
+      <tr>
+        <td>Fiesta de Alejandro</td>
+      </tr>
+      <tr>
+        <td>Baches en la Narvarte</td>
+      </tr>
+      <tr>
+        <td>Reunión de primaria</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+    <div id="menu2" class="container tab-pane fade"><br>
+      <h2 class="pb-4">Edita tu perfil</h2>
+      <form action="javascript:alert('¡Perfil modificado existosamente!'); window.location.href = 'event-details.html';">
+         <p class="font-weight-bold">Nombre</p>
+          <input type="text" class="form-control" required>
+          <p class="font-weight-bold">Contraseña</p>
+          <input type="password" class="form-control" required>
+          <p class="font-weight-bold">Confirma tu contraseña</p>
+          <input type="password" class="form-control" required>
+          <p class="font-weight-bold">Cambia tu foto</p>
+          <input name="fotos" class="form-control" type="file" name="photo" accept="image/*">
+          <div class="text-center">
+          <button class="btn btn-outline-dark mt-4" type="submit">Editar</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -140,12 +140,21 @@ input[type=text], input[type=password] {
   max-height: 45px;
   position: absolute;
   z-index: 2;
-  left: 3%;
+  left: 2%;
   top: 5%;
 }
 
 .newEvent-form input {
   width: 100%;
+}
+
+/* User profile */
+.user-profile img {
+  width: 90px;
+  position: absolute;
+  z-index: 2;
+  right: 5%;
+  top: 2%;
 }
 
 /*# sourceMappingURL=styles.css.map */
