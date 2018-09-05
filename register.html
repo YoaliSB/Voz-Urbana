@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Registro</title>
+</head>
+<body>
+        <div class="container-fluid">
+            <section class="menu">
+                <div class="row">
+                    <div class="col-12">
+                        <img class="logo" alt="logo" src="img/logo.png"/>
+                        <form action="login.html">
+                            <button class="menu-button">Inicia Sesión</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="register-page">
+                <div class="row">
+                    <div class="col-12 pic">
+                        <div class="register-form">
+                            <form action="javascript:alert('¡Perfil creado exitosamente!'); window.location.href = 'userProfile.html';">
+                                <div class="container">
+                                    <h1>Registro de cuenta</h1>
+                                    <p>Por favor crea tu cuenta con tu mail.</p>
+                                    <hr>
+
+                                    <label for="email"><b>Email</b></label>
+                                    <input class="form-control" type="text" placeholder="Ingresa tu Email" name="email" required>
+
+                                    <label for="psw"><b>Contraseña</b></label>
+                                    <input class="form-control" type="password" placeholder="Ingresa tu Contraseña" name="psw" required>
+
+                                    <label for="psw-repeat"><b>Confirmar contraseña</b></label>
+                                    <input class="form-control" type="password" placeholder="Confirma tu Contraseña" name="psw-repeat" required>
+                                    <hr>
+                                    <button type="submit" class="registerbtn">Registrar</button>
+                                </div>
+
+                                <div class="container signin">
+                                    <p>¿Ya tienes cuenta? <a href="login.html">Entra</a>.</p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="footer">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-2">
+                            <img src="img/logo.png" height="95%" width="75%">
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="row justify-content-center">
+                                Contáctate por mail
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-6">
+                                    <input class="contact form-control" type="email" placeholder="Mail" name="contact" required>
+                                </div>
+                                <div class="col-6">
+                                    <button type="submit" onclick="javascript:alert('Correo registrado.');">Contactar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row justify-content-center">
+                                Checa nuestras redes sociales
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-2">
+                                    <img src="img/twitter_icon.png" height="50px" width="50px">
+                                </div>
+                                <div class="col-2">
+                                    <img src="img/facebook_icon.png" height="50px" width="50px">
+                                </div>
+                                <div class="col-2">
+                                    <img src="img/Instagram_icon.png" height="50px" width="50px">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </div>
+    </body>
+</html>

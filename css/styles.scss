@@ -1,5 +1,217 @@
+
+
+.container-fluid{
+    font-size: 2em;
+    margin: 0px;
+    padding: 0px;
+}
 @import "mixins";
 @import "base-styles";
 @import "index";
 @import "event-details";
 
+
+.row{
+    margin: 0px;
+}
+
+.menu{
+    background: url(../img/concrete_wall.png);
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    .logo{
+        width: 180px;
+        position: absolute;
+        z-index: 2;
+        left: 39%;
+        @media screen and (max-width: 625px) {
+            
+            vertical-align: left;   
+            width: 90px;
+            
+            
+        }
+    }
+    .register{
+        font-size: 12px;
+        margin-top: 0px;
+        padding: 0%;
+    }
+    button{
+        background: none;
+        border:none;
+        color:white;
+        float: right;
+        :hover{
+            color: blue;
+            background-color: blue;
+        }
+        @media screen and (max-width: 625px) {
+            width: 25%;
+            font-size: 25%;
+            
+        
+        }
+        
+    }
+   
+}
+.register-page{
+    .pic{
+    background: url(../img/angel.jpg);
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    }
+}
+.content{
+    .pic{
+        background: url(../img/bellas-artes.jpg);
+        height: 630px;
+        padding: 0px;
+    }
+}
+
+
+.footer{
+    background: url(../img/dark-triangles.png);
+    
+}
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.register:hover {
+    color: blue;
+}
+.login:hover{
+    color: blue;
+}
+
+
+
+.container {
+  padding: 16px;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+  }
+
+input[type=text], input[type=password] {
+width: 100%;
+padding: 15px;
+margin: 5px 0 22px 0;
+display: inline-block;
+border: none;
+background: #f1f1f1;
+}
+.register-form{
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+.registerbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    :hover {
+        opacity:1;
+    }
+    }
+    a {
+    color: dodgerblue;
+    }
+    .signin {
+    color: white;
+    text-align: center;
+    }
+}
+.footer{
+    color:white;
+    font-size: 25px;
+    button{
+        background-color: rgb(43, 168, 209);
+        border-color: rgb(43, 168, 209);
+        border-radius: 4px;
+        :hover{
+            background-color: rgb(14, 66, 83);
+        }
+    }
+    .contact{
+        width: 100%;
+    }
+    @media screen and (max-width: 625px) {
+        img{
+            width: 50px;
+            height: 50px;
+            margin-left: 45%;
+        }
+        
+    }
+}
+
+      
+      a {
+        color: dodgerblue;
+      }
+      .signin {
+        color: white;
+        text-align: center;
+      }
+  
+  
+/* Create event */
+#map{
+    position: relative;
+    width:100%;
+    height:100%;
+}
+
+
+.menu-e{
+    background: url(../img/concrete_wall.png);
+    padding: 0px;
+    margin: 0px;
+    height: 50px;
+    position: relative;
+    color: white;
+    .logo{
+        width: 50px;
+        max-height: 45px;
+        position: absolute;
+        z-index: 2;
+        left: 2%;
+        top: 5%;
+    }
+}
+
+.newEvent-form{
+    input{
+        width: 100%;
+    }
+}
+
+/* User profile */ 
+.user-profile{
+    img{
+        width: 90px;
+        position: absolute;
+        z-index: 2;
+        right: 5%;
+        top: 2%;
+    }
+}
