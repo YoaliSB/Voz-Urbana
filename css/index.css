@@ -1,0 +1,98 @@
+body {
+  height: 100%;
+  font-family: "Catamaran", sans-serif;
+}
+
+.container-fluid {
+  margin: 0px;
+  padding: 0px;
+}
+@media screen and (min-width: 480px) {
+  .container-fluid {
+    font-size: 1.4em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container-fluid {
+    font-size: 2.2em;
+  }
+}
+
+.col-12 {
+  padding: 0px;
+}
+
+.row {
+  margin: 0px;
+}
+
+.menu {
+  background: url(../img/dark-triangles.png);
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+}
+.menu .logo {
+  width: 180px;
+  position: absolute;
+  z-index: 2;
+  left: 39%;
+}
+.menu button {
+  background: none;
+  color: white;
+  margin: 20px 40px;
+  float: right;
+}
+@media screen and (min-width: 480px) {
+  .menu button {
+    padding: 1% 2%;
+    border: 6px solid deeppink;
+  }
+}
+@media screen and (max-width: 480px) {
+  .menu button {
+    border: 7px solid deeppink;
+    padding: 2% 3%;
+  }
+}
+
+.content {
+  border: none;
+  background-color: deeppink;
+  color: white;
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 700;
+  margin-top: 5%;
+  margin-left: 33%;
+  padding: 2% 3%;
+}
+.content .pic {
+  background: url(../img/bellas-artes.jpg);
+  height: 630px;
+  padding: 0px;
+  background-repeat: round;
+}
+.content .slogan-text {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+  color: white;
+  padding: 3%;
+  margin: 4%;
+  bottom: 0px;
+  position: absolute;
+  border: 10px solid white;
+  width: 66%;
+  background: rgba(0, 0, 0, 0.2);
+}
+.content .blurb {
+  margin: 2%;
+  padding: 5%;
+}
+
+.footer {
+  background: url(../img/dark-triangles.png);
+}
+
+/*# sourceMappingURL=index.css.map */

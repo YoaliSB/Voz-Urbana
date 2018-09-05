@@ -1,7 +1,17 @@
+body {
+  height: 100%;
+  font-family: "Catamaran", sans-serif;
+}
+
 .container-fluid {
-  font-size: 2em;
   margin: 0px;
   padding: 0px;
+  font-size: 2.2em;
+}
+@media screen and (min-width: 1000px) {
+  .container-fluid {
+    font-size: 1.4em;
+  }
 }
 
 .col-12 {
@@ -13,10 +23,12 @@
 }
 
 .menu {
-  background: url(../img/concrete_wall.png);
+  background: url(../img/dark-triangles.png);
   padding: 0px;
   margin: 0px;
   position: relative;
+  color: white;
+  font-family: "Hind Siliguri", sans-serif;
 }
 .menu .logo {
   width: 180px;
@@ -24,15 +36,24 @@
   z-index: 2;
   left: 39%;
 }
+<<<<<<< HEAD
 .menu .register {
   font-size: 12px;
   margin-top: 0px;
   padding: 0%;
 }
 .menu button {
+=======
+@media screen and (min-width: 1000px) {
+  .menu .logo {
+    left: 44%;
+  }
+}
+.menu .menu-button {
+>>>>>>> primer-parcial
   background: none;
-  border: none;
   color: white;
+<<<<<<< HEAD
   margin: 25px;
   float: right;
 }
@@ -46,18 +67,77 @@
   height: 100%;
   width: 100%;
   padding: 0px;
+=======
+  margin: 20px 40px;
+  float: right;
+}
+@media screen and (min-width: 1000px) {
+  .menu .menu-button {
+    padding: 1% 2%;
+    border: 6px solid deeppink;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .menu .menu-button {
+    border: 7px solid deeppink;
+    padding: 2% 3%;
+  }
+}
+.menu h1 {
+  text-align: center;
+  padding: 3%;
+}
+@media screen and (min-width: 1000px) {
+  .menu h1 {
+    padding: 1%;
+  }
+>>>>>>> primer-parcial
 }
 
 .content .pic {
   background: url(../img/bellas-artes.jpg);
   height: 630px;
   padding: 0px;
+  background-repeat: round;
+}
+.content .slogan-text {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+  color: white;
+  padding: 3%;
+  margin: 4%;
+  bottom: 0px;
+  position: absolute;
+  border: 10px solid white;
+  width: 66%;
+  background: rgba(0, 0, 0, 0.2);
+}
+.content .blurb {
+  margin: 2%;
+  padding: 5%;
+}
+.content button {
+  margin-left: 34%;
+  border: none;
+  background-color: deeppink;
+  color: white;
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 700;
+  margin-top: 5%;
+  padding: 2% 3%;
+}
+@media screen and (min-width: 1000px) {
+  .content button {
+    margin-left: 40%;
+  }
 }
 
 .footer {
   background: url(../img/dark-triangles.png);
 }
 
+<<<<<<< HEAD
 .button1 {
   background-color: white;
   color: black;
@@ -140,6 +220,88 @@ input[type=text], input[type=password] {
     height: 50px;
     margin-left: 45%;
   }
+=======
+button {
+  border: none;
+  background-color: deeppink;
+  color: white;
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 700;
+  margin-top: 5%;
+  padding: 2% 3%;
+}
+
+.details .photos {
+  background: url(../img/bache.jpg);
+  height: 400px;
+}
+.details .map {
+  background: url(../img/mapa.JPG);
+  height: 400px;
+}
+.details button {
+  width: 100%;
+  display: block;
+  padding: 5% 0%;
+}
+.details .desc-container {
+  margin: 5% 0%;
+}
+.details .desc-buttons {
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+}
+.details .desc-buttons button {
+  width: 100%;
+  display: block;
+  padding: 10% 0%;
+}
+.details .desc-buttons #reportar {
+  background-color: black;
+}
+.details .link button {
+  margin-top: 0%;
+  padding: 3% 0%;
+}
+.details .sprites .sprite {
+  height: 80px;
+  width: 88px;
+}
+.details .sprites img {
+  margin: 0% 5%;
+}
+
+.comments {
+  margin: 5% 0%;
+}
+.comments .col-12, .comments .col-6, .comments .col-9, .comments .col-3 {
+  padding: 0% 2%;
+}
+.comments textarea {
+  width: 100%;
+  padding: 1%;
+  outline: 1px solid gray;
+  box-shadow: none;
+  border-bottom: none;
+}
+.comments .send-button button {
+  margin-top: 0px;
+  float: right;
+}
+.comments .comment-item {
+  border: 2px solid deeppink;
+  margin: 2%;
+  padding: 1%;
+}
+.comments .comment-item .interactions {
+  padding: 0px;
+  text-align: center;
+}
+.comments .comment-item .interactions .sprite {
+  height: 40px;
+  width: 60px;
+>>>>>>> primer-parcial
 }
 
 /*# sourceMappingURL=styles.css.map */
