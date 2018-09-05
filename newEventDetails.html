@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Agrega tu evento</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="Author" content="Ana Karen Campos García"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <script type="text/javascript" src="js/maps.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <section class="title text-center">
+                <div class="row">
+                    <div class="col-12">
+                        <textarea placeholder="Título"></textarea>
+                    </div>
+                </div>
+            </section>
+            <section class="event-where text-center">
+                <div class="row">
+                    <div class="col">
+                        <h1>¿Dónde?</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <textarea placeholder="Dirección"></textarea>
+                        <div class="pb-4" id="map" style="width:330px;height:100%;"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="container-fluid">
+            <section class="event-more text-center">
+                <div class="row">
+                    <div class="col">
+                        <textarea placeholder="Descripción"></textarea>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtQKl2wqACda5_ytIqU1V84hLISGSmw7g&callback=myMap"></script>
+    </body>
+</html>
