@@ -1,3 +1,7 @@
+.container-fluid {
+  font-size: 1em;
+}
+
 .menu {
   background: url(../img/dark-triangles.png);
   padding: 0px;
@@ -8,11 +12,12 @@
 }
 .menu .logo {
   width: 180px;
+  max-height: 100px;
   position: absolute;
   z-index: 2;
   left: 39%;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   .menu .logo {
     left: 44%;
   }
@@ -23,13 +28,13 @@
   margin: 20px 40px;
   float: right;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   .menu .menu-button {
     padding: 1% 2%;
     border: 6px solid deeppink;
   }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
   .menu .menu-button {
     border: 7px solid deeppink;
     padding: 2% 3%;
@@ -39,21 +44,30 @@
   text-align: center;
   padding: 3%;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   .menu h1 {
     padding: 1%;
   }
 }
 .menu .logo {
   width: 180px;
+  max-height: 180px;
   position: absolute;
   z-index: 2;
   left: 39%;
 }
-@media screen and (max-width: 625px) {
+@media screen and (max-width: 900px) {
   .menu .logo {
     vertical-align: left;
     width: 90px;
+    height: auto;
+  }
+}
+@media screen and (min-width: 580px) {
+  .menu .logo {
+    vertical-align: left;
+    width: 100px;
+    height: auto;
   }
 }
 .menu .register {
@@ -66,25 +80,15 @@
   color: white;
   float: right;
 }
-.menu button :hover {
-  color: blue;
-  background-color: blue;
-}
-@media screen and (max-width: 625px) {
-  .menu button {
-    width: 25%;
-    font-size: 25%;
-  }
+.menu .login-button {
+  font-size: 0.8em;
+  margin: 2% 1%;
 }
 
 .register-page .pic {
   height: 100%;
   width: 100%;
   padding: 0px;
-}
-
-.footer {
-  background: url(../img/dark-triangles.png);
 }
 
 .button1 {
@@ -102,15 +106,10 @@
 }
 
 .container {
-  padding: 16px;
+  padding: 6px;
 }
 
-/* Add padding to containers */
-.container {
-  padding: 16px;
-}
-
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=email] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -119,7 +118,7 @@ input[type=text], input[type=password] {
   background: #f1f1f1;
 }
 
-.register-form input[type=text]:focus, .register-form input[type=password]:focus {
+.register-form input[type=text]:focus, .register-form input[type=password]:focus, .register-form input[type=email]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -128,10 +127,13 @@ input[type=text], input[type=password] {
   margin-bottom: 25px;
 }
 .register-form .registerbtn {
-  background-color: #4CAF50;
+  border: none;
+  background-color: deeppink;
   color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 700;
+  margin-top: 5%;
+  padding: 2% 3%;
   border: none;
   cursor: pointer;
   width: 100%;
@@ -140,11 +142,7 @@ input[type=text], input[type=password] {
 .register-form .registerbtn :hover {
   opacity: 1;
 }
-.register-form a {
-  color: dodgerblue;
-}
 .register-form .signin {
-  color: white;
   text-align: center;
 }
 
@@ -153,12 +151,13 @@ input[type=text], input[type=password] {
   font-size: 25px;
 }
 .footer button {
-  background-color: #2ba8d1;
-  border-color: #2ba8d1;
-  border-radius: 4px;
-}
-.footer button :hover {
-  background-color: #0e4253;
+  border: none;
+  background-color: deeppink;
+  color: white;
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 700;
+  margin-top: 5%;
+  padding: 2% 3%;
 }
 .footer .contact {
   width: 100%;
@@ -169,11 +168,6 @@ input[type=text], input[type=password] {
     height: 50px;
     margin-left: 45%;
   }
-}
-
-.signin {
-  color: white;
-  text-align: center;
 }
 
 /*# sourceMappingURL=register.css.map */

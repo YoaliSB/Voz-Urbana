@@ -1,9 +1,9 @@
 .container1 {
-  font-size: 2.2em !important;
+  font-size: 1.4em;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   .container1 {
-    font-size: 1.4em !important;
+    font-size: 2.2em !important;
   }
 }
 
@@ -29,12 +29,10 @@ body {
   font-family: "Hind Siliguri", sans-serif;
 }
 .menu .logo {
-  width: 180px;
-  position: absolute;
-  z-index: 2;
-  left: 39%;
+  width: 160px;
+  max-height: 110px;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   .menu .logo {
     left: 44%;
   }
@@ -42,29 +40,56 @@ body {
 .menu .menu-button {
   background: none;
   color: white;
-  margin: 20px 40px;
   float: right;
+  position: relative;
+  top: 26%;
+  rigth: 9%;
+  border: 7px solid deeppink;
+  padding: 2% 3%;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   .menu .menu-button {
     padding: 1% 2%;
     border: 6px solid deeppink;
+    top: 10%;
+    font-size: 0.7em;
   }
 }
-@media screen and (max-width: 1000px) {
-  .menu .menu-button {
-    border: 7px solid deeppink;
-    padding: 2% 3%;
+.menu .menu-buttonRI {
+  background: none;
+  color: white;
+  float: right;
+  position: relative;
+  top: 26%;
+  rigth: 9%;
+  border: 7px solid deeppink;
+  padding: 2% 3%;
+}
+@media screen and (min-width: 900px) {
+  .menu .menu-buttonRI {
+    padding: 1% 2%;
+    border: 6px solid deeppink;
+    top: 10%;
+    font-size: 0.7em;
+  }
+}
+@media screen and (min-width: 900px) {
+  .menu .menu-buttonRI {
+    font-size: 1.4em;
   }
 }
 .menu h1 {
   text-align: center;
   padding: 3%;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   .menu h1 {
     padding: 1%;
   }
+}
+.menu form {
+  position: relative;
+  height: 100%;
 }
 
 .content .pic {
@@ -87,11 +112,9 @@ body {
   background: rgba(0, 0, 0, 0.2);
 }
 .content .blurb {
-  margin: 2%;
   padding: 5%;
 }
 .content button {
-  margin-left: 34%;
   border: none;
   background-color: deeppink;
   color: white;
@@ -99,11 +122,6 @@ body {
   font-weight: 700;
   margin-top: 5%;
   padding: 2% 3%;
-}
-@media screen and (min-width: 1000px) {
-  .content button {
-    margin-left: 40%;
-  }
 }
 
 .footer {
@@ -123,7 +141,7 @@ button {
 .container1 {
   font-size: 2.2em;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   .container1 {
     font-size: 1.4em;
   }
@@ -202,7 +220,7 @@ button {
 }
 
 .user-profile img {
-  width: 90px;
+  max-width: 90px;
   position: absolute;
   z-index: 2;
   right: 5%;
@@ -223,12 +241,10 @@ button {
   font-family: "Hind Siliguri", sans-serif;
 }
 .user-profile menu .logo {
-  width: 180px;
-  position: absolute;
-  z-index: 2;
-  left: 39%;
+  width: 160px;
+  max-height: 110px;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   .user-profile menu .logo {
     left: 44%;
   }
@@ -236,29 +252,56 @@ button {
 .user-profile menu .menu-button {
   background: none;
   color: white;
-  margin: 20px 40px;
   float: right;
+  position: relative;
+  top: 26%;
+  rigth: 9%;
+  border: 7px solid deeppink;
+  padding: 2% 3%;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   .user-profile menu .menu-button {
     padding: 1% 2%;
     border: 6px solid deeppink;
+    top: 10%;
+    font-size: 0.7em;
   }
 }
-@media screen and (max-width: 1000px) {
-  .user-profile menu .menu-button {
-    border: 7px solid deeppink;
-    padding: 2% 3%;
+.user-profile menu .menu-buttonRI {
+  background: none;
+  color: white;
+  float: right;
+  position: relative;
+  top: 26%;
+  rigth: 9%;
+  border: 7px solid deeppink;
+  padding: 2% 3%;
+}
+@media screen and (min-width: 900px) {
+  .user-profile menu .menu-buttonRI {
+    padding: 1% 2%;
+    border: 6px solid deeppink;
+    top: 10%;
+    font-size: 0.7em;
+  }
+}
+@media screen and (min-width: 900px) {
+  .user-profile menu .menu-buttonRI {
+    font-size: 1.4em;
   }
 }
 .user-profile menu h1 {
   text-align: center;
   padding: 3%;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   .user-profile menu h1 {
     padding: 1%;
   }
+}
+.user-profile menu form {
+  position: relative;
+  height: 100%;
 }
 
 #map {
@@ -281,12 +324,10 @@ button {
   margin-bottom: 2%;
 }
 .menu-e .logo {
-  width: 180px;
-  position: absolute;
-  z-index: 2;
-  left: 39%;
+  width: 160px;
+  max-height: 110px;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   .menu-e .logo {
     left: 44%;
   }
@@ -294,29 +335,56 @@ button {
 .menu-e .menu-button {
   background: none;
   color: white;
-  margin: 20px 40px;
   float: right;
+  position: relative;
+  top: 26%;
+  rigth: 9%;
+  border: 7px solid deeppink;
+  padding: 2% 3%;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   .menu-e .menu-button {
     padding: 1% 2%;
     border: 6px solid deeppink;
+    top: 10%;
+    font-size: 0.7em;
   }
 }
-@media screen and (max-width: 1000px) {
-  .menu-e .menu-button {
-    border: 7px solid deeppink;
-    padding: 2% 3%;
+.menu-e .menu-buttonRI {
+  background: none;
+  color: white;
+  float: right;
+  position: relative;
+  top: 26%;
+  rigth: 9%;
+  border: 7px solid deeppink;
+  padding: 2% 3%;
+}
+@media screen and (min-width: 900px) {
+  .menu-e .menu-buttonRI {
+    padding: 1% 2%;
+    border: 6px solid deeppink;
+    top: 10%;
+    font-size: 0.7em;
+  }
+}
+@media screen and (min-width: 900px) {
+  .menu-e .menu-buttonRI {
+    font-size: 1.4em;
   }
 }
 .menu-e h1 {
   text-align: center;
   padding: 3%;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   .menu-e h1 {
     padding: 1%;
   }
+}
+.menu-e form {
+  position: relative;
+  height: 100%;
 }
 
 .newEvent-form input {
@@ -336,12 +404,10 @@ button {
   font-family: "Hind Siliguri", sans-serif;
 }
 .menu .logo {
-  width: 180px;
-  position: absolute;
-  z-index: 2;
-  left: 39%;
+  width: 160px;
+  max-height: 110px;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   .menu .logo {
     left: 44%;
   }
@@ -349,40 +415,64 @@ button {
 .menu .menu-button {
   background: none;
   color: white;
-  margin: 20px 40px;
   float: right;
+  position: relative;
+  top: 26%;
+  rigth: 9%;
+  border: 7px solid deeppink;
+  padding: 2% 3%;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   .menu .menu-button {
     padding: 1% 2%;
     border: 6px solid deeppink;
+    top: 10%;
+    font-size: 0.7em;
   }
 }
-@media screen and (max-width: 1000px) {
-  .menu .menu-button {
-    border: 7px solid deeppink;
-    padding: 2% 3%;
+.menu .menu-buttonRI {
+  background: none;
+  color: white;
+  float: right;
+  position: relative;
+  top: 26%;
+  rigth: 9%;
+  border: 7px solid deeppink;
+  padding: 2% 3%;
+}
+@media screen and (min-width: 900px) {
+  .menu .menu-buttonRI {
+    padding: 1% 2%;
+    border: 6px solid deeppink;
+    top: 10%;
+    font-size: 0.7em;
+  }
+}
+@media screen and (min-width: 900px) {
+  .menu .menu-buttonRI {
+    font-size: 1.4em;
   }
 }
 .menu h1 {
   text-align: center;
   padding: 3%;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   .menu h1 {
     padding: 1%;
   }
 }
-.menu .logo {
-  width: 180px;
-  position: absolute;
-  z-index: 2;
-  left: 39%;
+.menu form {
+  position: relative;
+  height: 100%;
 }
-@media screen and (max-width: 625px) {
+.menu .logo {
+  width: 160px;
+  max-height: 110px;
+}
+@media screen and (min-width: 900px) {
   .menu .logo {
-    vertical-align: left;
-    width: 90px;
+    left: 44%;
   }
 }
 .menu .register {
@@ -397,6 +487,7 @@ button {
 }
 .menu .login-button {
   font-size: 0.8em;
+  margin: 2% 1%;
 }
 
 .register-page .pic {
@@ -484,6 +575,27 @@ input[type=text], input[type=password], input[type=email] {
   }
 }
 
+.containerE {
+  font-size: 2em;
+}
+
+.tab-content .container {
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.eR {
+  font-size: 1.6em;
+}
+
+.brandN {
+  font-size: 1em;
+}
+
+.navbar {
+  background: url(../img/dark-triangles.png);
+}
+
 .container-fluid {
   margin: 0px;
   padding: 0px;
@@ -498,7 +610,7 @@ a {
 }
 
 .carousel-inner {
-  height: 350px;
+  height: 550px;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -9,10 +9,8 @@
 }
 
 @mixin logo{
-    width: 180px;
-    position: absolute;
-    z-index: 2;
-    left: 39%;
+    width: 160px;
+    max-height: 110px;
     @media screen and (min-width: $big-screen) {
         left:44%;
     }
@@ -21,15 +19,24 @@
 @mixin menu-button{
     background: none;
     color: white;
-    margin: 20px 40px;
     float: right;
+    position: relative;
+    top:26%;
+    rigth: 9%;
+    border: 7px solid deeppink;
+    padding: 2% 3%;
     @media screen and (min-width: $big-screen) {
         padding: 1% 2%;
         border: 6px solid deeppink;
+        top:10%;
+        font-size: $font-size/2;
     }
-    @media screen and (max-width: $big-screen) {
-        border: 7px solid deeppink;
-        padding: 2% 3%;
+}
+
+@mixin menu-buttonRI{
+    @include menu-button;
+    @media screen and (min-width: $big-screen) {
+        font-size: $font-size;
     }
 }
 
@@ -46,12 +53,19 @@
     .menu-button{
         @include menu-button;
     }
+    .menu-buttonRI{
+        @include menu-buttonRI;
+    }
     h1{
         text-align: center;
         padding:3%;
         @media screen and (min-width: $big-screen) {
             padding: 1%;
         }
+    }
+    form{
+        position: relative;
+        height: 100%;
     }
 }
 

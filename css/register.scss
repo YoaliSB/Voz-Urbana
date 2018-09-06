@@ -8,14 +8,7 @@
 .menu{
     @include menu;
     .logo{
-        width: 180px;
-        position: absolute;
-        z-index: 2;
-        left: 39%;
-        @media screen and (max-width: 625px) {          
-            vertical-align: left;   
-            width: 90px;        
-        }
+        @include logo;
     }
     .register{
         margin-top: 0px;
@@ -29,6 +22,7 @@
     }
     .login-button{
         font-size: 0.8em;
+        margin: 2% 1%;
     }
    
 }

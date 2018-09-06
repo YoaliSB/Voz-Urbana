@@ -2,10 +2,10 @@
 @import "base-styles";
 
 .container1{
-    font-size:$big-font-size !important;
-    @media screen and (min-width: $big-screen) {
-        font-size:$font-size !important;
+    @media screen and (min-width: $big-screen){
+        font-size:$big-font-size !important;
     }
+    font-size: $font-size;
 }
 
 body{
@@ -46,15 +46,11 @@ body{
         background: rgba(0,0,0,0.2);
     }
     .blurb{
-        margin: 2%;
         padding: 5%;
     }
     
     button{ 
-        margin-left: 34%;
-        @media screen and (min-width: $big-screen) {
-            margin-left:40%;
-        }
+
         @include button;
     }
 }
