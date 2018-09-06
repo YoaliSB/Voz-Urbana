@@ -579,11 +579,6 @@ input[type=text], input[type=password], input[type=email] {
   font-size: 2em;
 }
 
-.tab-content .container {
-  margin-right: 5%;
-  margin-left: 5%;
-}
-
 .eR {
   font-size: 1.6em;
 }
