@@ -19,7 +19,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { PublishedEventsComponent } from './components/published-events/published-events.component';
 import { SavedEventsComponent } from './components/saved-events/saved-events.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
-
+import { HttpClientModule } from '@angular/common/http'; //rest client call http rest service
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +42,8 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     EditProfileComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
