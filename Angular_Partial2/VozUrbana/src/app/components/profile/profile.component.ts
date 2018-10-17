@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 import { UserServiceService } from '../../services/user-service.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { User } from '../../models/user';
@@ -10,9 +10,12 @@ import { User } from '../../models/user';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
-  userModel = new User('nombre','example@mail.com','*****','type');
-
+  nombre:string;
+  mail:string;
+  psw:string;
+  tipo:string;
+  userModel = new User(this.nombre,this.mail,this.psw,this.tipo);
+  
   editProfileForm = new FormGroup({
     nombre: new FormControl(),
     email: new FormControl(),
@@ -45,8 +48,12 @@ export class ProfileComponent implements OnInit {
   }
 
   getUser(){
-    this.rest.getMaJson().subscribe((data: any) => {
+    this.rest.getUser().subscribe((data: any) => {
       console.log(data);
+      this.nombre=data[2]["name"];
+      this.mail=data[2]["mail"];
+      this.psw=data[2]["pwd"];
+      this.tipo=data[2]["type"];
    });
   }
 

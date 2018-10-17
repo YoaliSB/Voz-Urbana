@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
   }
 
   getUser(){
-    this.rest.getMaJson().subscribe((data: any) => {
+    this.rest.getUser().subscribe((data: any) => {
       console.log(data);
    });
   }

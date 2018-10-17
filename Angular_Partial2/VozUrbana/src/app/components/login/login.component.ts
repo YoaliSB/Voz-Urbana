@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
   }
 
   getUser(){
-    this.rest.getMaJson().subscribe((data: any) => {
+    this.rest.getUser().subscribe((data: any) => {
       console.log(data);
    });
   }
