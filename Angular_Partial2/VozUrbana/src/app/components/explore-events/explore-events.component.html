@@ -50,10 +50,8 @@
               <h3 class="pb-2 eR">Eventos relevantes</h3>
                 <table class="table table-hover">
             <tbody>
-              
               <tr *ngFor="let event of events; let i = index" [attr.data-index]="i">
-                  <th scope="row"> </th>
-                  <td>{{event.titulo}}</td>
+                  <td><a [routerLink]="['/event-details/', i+1]">{{event.titulo}}</a></td>
               </tr>
             </tbody>
             

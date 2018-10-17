@@ -26,7 +26,7 @@ import { PoliceComponent } from './components/police/police.component';
 const routes: Routes = [
     { path: '', component: LandingPageComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'event-details', component: EventDetailsComponent },
+    { path: 'event-details/:id', component: EventDetailsComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'create-event', component: CreateEventComponent },
     { path: 'profile', component: ProfileComponent },

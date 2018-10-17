@@ -25,4 +25,11 @@ export class EventServiceService {
       })
     );
   }
+
+    getEvent(id): Observable<any> {
+    return this.http.get('http://localhost:4200/assets/events.json').pipe(
+      map(function(res){
+        return res;
+      }));
+  }
 }

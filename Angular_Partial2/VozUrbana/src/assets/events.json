@@ -1,33 +1,38 @@
 [{
-   "id":1,
+   "id":"1",
    "titulo":"Mega Bache",
    "direccion":"Calle del puente 222",
    "descripcion":"UN bache increiblemente enorme",
    "link":"",
    "fecha":"10/10/2018",
-   "foto":"image.jpg"
+   "foto":"image.jpg",
+   "tipo":"general"
 },{
-   "id":2,
+   "id":"2",
    "titulo":"Concierto Bob Esponja",
    "direccion":"Viaducto Rio de la Piedad y Rio Churubusco S/N",
    "descripcion":"El concierto mas perron de la vida",
    "link":"esponjabob.com",
    "fecha":"19/10/2018",
-   "foto":"image.jpg"    
+   "foto":"image.jpg",
+   "tipo":"social"    
 },{
-   "id":3,
+   "id":"3",
    "titulo":"Asalto a mano armada",
    "direccion":"Calle Amsterdam 3",
    "descripcion":"3 sujetos armados con capucha te asaltan bien feo",
    "link":"",
    "fecha":"09/10/2018",
-   "foto":"image.jpg"    
+   "foto":"image.jpg" ,
+   "tipo":"policial"   
 },{
-   "id":4,
+   "id":"4",
    "titulo":"Fiesta de cumpleaños",
    "direccion":"Rancho del perrito 32",
    "descripcion":"FIesta de cumpleaños con buffet de todo los que peudas comer",
    "link":"fiestafacebook.com",
    "fecha":"22/10/2018",
-   "foto":"image.jpg"    
+   "foto":"image.jpg",
+   "tipo":"social"
+
 }]

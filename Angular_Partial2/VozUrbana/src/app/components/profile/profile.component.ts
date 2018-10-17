@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
+import { RxwebValidators, RxFormBuilder } from '@rxweb/reactive-form-validators';
 import { UserServiceService } from '../../services/user-service.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { User } from '../../models/user';
@@ -23,7 +24,7 @@ export class ProfileComponent implements OnInit {
     fotos: new FormControl()
   });
 
-  constructor(private rest: UserServiceService, private formBuilder: FormBuilder) { 
+  constructor(private rest: UserServiceService, private formBuilder: FormBuilder, private router: Router) { 
     this.createForm();
   }
 
@@ -31,8 +32,9 @@ export class ProfileComponent implements OnInit {
     this.editProfileForm = this.formBuilder.group({
       name: new FormControl('', Validators.minLength(1)),
       email: new FormControl('',Validators.email),
-      password: new FormControl('',Validators.minLength(8)),
-      fotos: new FormControl()
+      fotos: new FormControl(),
+      password: new FormControl('',[Validators.required,Validators.minLength(8)]),
+      confirmPassword: new FormControl('',[Validators.required,Validators.minLength(8),RxwebValidators.compare({fieldName: 'password'})])
     })
   }
 
@@ -41,6 +43,7 @@ export class ProfileComponent implements OnInit {
     this.userModel.name = this.editProfileForm.value.name;
     this.userModel.mail = this.editProfileForm.value.email;
     this.userModel.pwd = this.editProfileForm.value.password;
+    this.router.navigate(['/ExploreEvents']);
   }
 
   ngOnInit() {
