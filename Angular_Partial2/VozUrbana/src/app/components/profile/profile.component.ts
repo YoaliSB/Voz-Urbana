@@ -11,7 +11,7 @@ import { User } from '../../models/user';
 })
 export class ProfileComponent implements OnInit {
 
-  userModel = new User('nombre','example@mail.com','*****');
+  userModel = new User('nombre','example@mail.com','*****','type');
 
   editProfileForm = new FormGroup({
     nombre: new FormControl(),

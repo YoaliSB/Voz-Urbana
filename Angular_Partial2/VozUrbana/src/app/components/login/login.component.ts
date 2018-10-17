@@ -11,7 +11,7 @@ import { User } from '../../models/user';
 })
 export class LoginComponent implements OnInit {
 
-  userModel = new User('nombre','example@mail.com','*****');
+  userModel = new User('nombre','example@mail.com','*****','type');
 
   loginForm = new FormGroup({
     email: new FormControl(),

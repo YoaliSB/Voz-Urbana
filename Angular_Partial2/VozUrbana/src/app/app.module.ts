@@ -24,6 +24,8 @@ import { HttpClientModule } from '@angular/common/http'; //rest client call http
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { AbstractControl } from '@angular/forms';
+import { AdminComponent } from './components/admin/admin.component';
+import { PoliceComponent } from './components/police/police.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { AbstractControl } from '@angular/forms';
     ProfileComponent,
     PublishedEventsComponent,
     SavedEventsComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    AdminComponent,
+    PoliceComponent
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,7 @@ import { RxwebValidators, RxFormBuilder } from '@rxweb/reactive-form-validators'
 })
 export class RegisterComponent implements OnInit {
 
-  userModel = new User('nombre','example@mail.com','*****');
+  userModel = new User('nombre','example@mail.com','*****','type');
 
   registerForm = new FormGroup({
     email: new FormControl(),

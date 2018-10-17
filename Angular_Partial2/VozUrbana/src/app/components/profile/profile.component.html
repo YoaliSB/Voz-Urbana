@@ -22,7 +22,7 @@
           <div class="tab-content pl-2">
                         <div id="home" class="container tab-pane active"><br>
               <h3 class="pb-4">Edita tu perfil</h3>
-              <form [formGroup]="editProfileForm" (ngSubmit)=enviarFormulario()>
+              <form [formGroup]="editProfileForm" (ngSubmit)="enviarFormulario()">
                  <p class="font-weight-bold">Nombre</p>
                   <input type="text" class="form-control form-control-lg" formControlName="name" >
                   <div *ngIf="name.invalid" style="color: red">Nombre muy corto</div>
