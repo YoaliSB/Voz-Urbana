@@ -15,7 +15,7 @@ export class UserServiceService {
   };
   constructor(private http: HttpClient) { }
 
-  getMaJson():Observable<any>{
+  getUser():Observable<any>{
     // Make the HTTP request:
     return this.http.get('http://localhost:4200/assets/users.json').pipe(
       map(function(res){

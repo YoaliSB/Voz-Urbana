@@ -1,10 +1,16 @@
 [{
-    "id":1,
-    "username":"AlejandroPM",
-    "pass":"123"
+   "name":"Alejandro Peña",
+   "mail":"apm@hotmail.com",
+   "pwd":"123",
+   "type":"admin"    
 },{
-    "id":2,
-    "username":"AKCG",
-    "pass":"321"
-}
-]
+   "name":"Ana Karen",
+   "mail":"akcg@hotmail.com",
+   "pwd":"321",
+   "type":"policia"    
+},{
+   "name":"Yoali Sotomayor",
+   "mail":"yoaliS@hotmail.com",
+   "pwd":"456",
+   "type":"usuario"    
+}]

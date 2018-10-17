@@ -1,5 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -19,46 +20,21 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { PublishedEventsComponent } from './components/published-events/published-events.component';
 import { SavedEventsComponent } from './components/saved-events/saved-events.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
-import { HttpClientModule } from '@angular/common/http'; //rest client call http rest service
-
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
-import { AbstractControl } from '@angular/forms';
 import { AdminComponent } from './components/admin/admin.component';
 import { PoliceComponent } from './components/police/police.component';
-import { RoutingModule } from './routing.module';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    LandingPageComponent,
-    RegisterComponent,
-    LoginComponent,
-    CarruselComponent,
-    ExploreEventsComponent,
-    CreateEventComponent,
-    EventDetailsComponent,
-    CommentsComponent,
-    InsertCommentComponent,
-    RelevantEventsComponent,
-    NewEventsComponent,
-    ProfileComponent,
-    PublishedEventsComponent,
-    SavedEventsComponent,
-    EditProfileComponent,
-    AdminComponent,
-    PoliceComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
-    RoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+const routes: Routes = [
+    { path: '', component: LandingPageComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'event-details/:id', component: EventDetailsComponent },
+    { path: 'register', component: RegisterComponent },
+    { path: 'create-event', component: CreateEventComponent },
+    { path: 'profile', component: ProfileComponent },
+    { path: 'ExploreEvents', component: ExploreEventsComponent },
+    { path: 'admin', component: AdminComponent },
+    { path: 'police', component: PoliceComponent },
+  
+  ];
+  
+  export const RoutingModule: ModuleWithProviders =
+    RouterModule.forRoot(routes, { enableTracing: true }  );

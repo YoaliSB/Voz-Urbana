@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { UserServiceService } from '../../services/user-service.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { User } from '../../models/user';
@@ -11,14 +11,15 @@ import { User } from '../../models/user';
 })
 export class LoginComponent implements OnInit {
 
-  userModel = new User('nombre','example@mail.com','*****');
+  userModel = new User('nombre','example@mail.com','*****','type');
+  users = new Array<User>();
 
   loginForm = new FormGroup({
     email: new FormControl(),
     password: new FormControl()
   });
 
-  constructor(private rest: UserServiceService, private formBuilder: FormBuilder) { 
+  constructor(private rest: UserServiceService, private formBuilder: FormBuilder, private router: Router) { 
     this.createForm();
   }
 
@@ -34,6 +35,13 @@ export class LoginComponent implements OnInit {
     let forma = this.loginForm.value;
     this.userModel.mail = this.loginForm.value.email;
     this.userModel.pwd = this.loginForm.value.password;
+    if(this.userModel.mail==this.users[1].mail){
+      this.router.navigate(['/police']);
+    }else if(this.userModel.mail==this.users[0].mail){
+      this.router.navigate(['/admin']);
+    }else{
+      this.router.navigate(['/ExploreEvents']);
+    }
   }
 
   ngOnInit() {
@@ -41,8 +49,9 @@ export class LoginComponent implements OnInit {
   }
 
   getUser(){
-    this.rest.getMaJson().subscribe((data: any) => {
+    this.rest.getUser().subscribe((data: any) => {
       console.log(data);
+      this.users = data;
    });
   }
 

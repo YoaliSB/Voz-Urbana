@@ -2,7 +2,7 @@
     <section class="title">
         <div class="row">
             <div class="col-12">
-                <h1>Bache en la Narvarte</h1>
+                <h1>{{events.titulo}}</h1>
             </div>
         </div>
     </section>
@@ -17,7 +17,8 @@
         </div>
         <div class="row desc-container">
             <div class="col-md-9 col-lg-9 col-sm-12 description">
-                <p>Bache en la Narvarte entre Eje 5 y Yácatas. Reportado el 3 de septiembre y aún esperando reparación. Cuidado, cuando llueve no se ve. </p>
+                <p>{{events.titulo}} en {{events.direccion}}. Reportado el {{events.fecha}} </p>
+                <p>{{events.descripcion}}</p>
             </div>
             <div class="col-md-3 col-lg-3 col-sm-12 desc-buttons">
                 <button class="btn btn-primary" id="reportar" onclick="javascript:alert('Se llamará al policía más cercano'); window.location.href = 'tel:911';">911</button>

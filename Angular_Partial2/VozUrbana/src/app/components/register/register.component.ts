@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { UserServiceService } from '../../services/user-service.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { User } from '../../models/user';
@@ -13,7 +13,7 @@ import { RxwebValidators, RxFormBuilder } from '@rxweb/reactive-form-validators'
 })
 export class RegisterComponent implements OnInit {
 
-  userModel = new User('nombre','example@mail.com','*****');
+  userModel = new User('nombre','example@mail.com','*****','type');
 
   registerForm = new FormGroup({
     email: new FormControl(),
@@ -21,14 +21,14 @@ export class RegisterComponent implements OnInit {
     confirmPassword: new FormControl()
   });
 
-  constructor(private rest: UserServiceService, private formBuilder: FormBuilder) { 
+  constructor(private rest: UserServiceService, private formBuilder: FormBuilder, private router: Router) { 
     this.createForm();
   }
 
   createForm(){
     this.registerForm = this.formBuilder.group({
       email: new FormControl('',[Validators.required, Validators.email]),
-      password: new FormControl('',[Validators.required,Validators.minLength(8),RxwebValidators.compare({fieldName: 'confirmPassword'})]),
+      password: new FormControl('',[Validators.required,Validators.minLength(8)]),
       confirmPassword: new FormControl('',[Validators.required,Validators.minLength(8),RxwebValidators.compare({fieldName: 'password'})])
     })
   }
@@ -37,6 +37,7 @@ export class RegisterComponent implements OnInit {
     let forma = this.registerForm.value;
     this.userModel.mail = this.registerForm.value.email;
     this.userModel.pwd = this.registerForm.value.password;
+    this.router.navigate(['/ExploreEvents']);
   }
 
   ngOnInit() {
@@ -44,7 +45,7 @@ export class RegisterComponent implements OnInit {
   }
 
   getUser(){
-    this.rest.getMaJson().subscribe((data: any) => {
+    this.rest.getUser().subscribe((data: any) => {
       console.log(data);
    });
   }

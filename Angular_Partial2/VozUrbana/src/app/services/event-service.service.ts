@@ -17,12 +17,19 @@ export class EventServiceService {
 
   constructor(private http: HttpClient) { }
 
-    getMaJson():Observable<any>{
+    getEvents():Observable<any>{
     // Make the HTTP request:
-    return this.http.get('http://localhost:4200/assets/users.json').pipe(
+    return this.http.get('http://localhost:4200/assets/events.json').pipe(
       map(function(res){
         return res;
       })
     );
+  }
+
+    getEvent(id): Observable<any> {
+    return this.http.get('http://localhost:4200/assets/events.json').pipe(
+      map(function(res){
+        return res;
+      }));
   }
 }

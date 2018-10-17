@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 import { EventServiceService } from '../../services/event-service.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Event } from '../../models/event';
@@ -49,7 +49,7 @@ export class CreateEventComponent implements OnInit {
   }
 
   getEvent(){
-    this.rest.getMaJson().subscribe((data: any) => {
+    this.rest.getEvents().subscribe((data: any) => {
       console.log(data);
    });
   }
