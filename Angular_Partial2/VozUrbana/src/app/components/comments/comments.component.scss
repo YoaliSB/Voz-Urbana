@@ -1,0 +1,34 @@
+@import '../../../theme';
+
+.comments{
+    margin: $section-margin;
+    .col-12, .col-6, .col-9, .col-3{
+        padding: 0% 2%;
+    }
+    textarea{
+        width: 100%;
+        padding: $small-padding;
+        outline: 1px solid gray;
+        box-shadow: none;
+        border-bottom: none;
+    }
+    .send-button{
+        button{
+            margin-top: 0px;
+            float: right;
+        }
+    }
+    .comment-item{
+        border: 2px solid $primary-bg;
+        margin: $small-margin;
+        padding: $small-padding;
+        .interactions{
+            padding: 0px;
+            text-align: center;
+            .sprite{
+                height:$sprite-size/2;
+                width:$sprite-size/2 * 1.5;  
+            }
+        }
+    }
+}

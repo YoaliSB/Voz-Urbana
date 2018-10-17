@@ -1,0 +1,31 @@
+@import '../../../theme';
+
+.menu{
+    background: $texture;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    color: white;
+    font-family: $big-font;
+    .logo{
+        width: $logo-width;
+	    max-height: $logo-height;
+	    @media screen and (min-width: $big-screen) {
+	        left:44%;
+	    }
+    }
+    h1{
+        text-align: center;
+        padding:3%;
+        @media screen and (min-width: $big-screen) {
+            padding: 1%;
+        }
+    }
+    form{
+        position: relative;
+        height: 100%;
+    }
+    .menu-button{
+	    @include menu-button;
+	}
+}

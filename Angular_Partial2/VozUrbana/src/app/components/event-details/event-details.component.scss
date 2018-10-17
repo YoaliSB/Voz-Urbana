@@ -1,0 +1,60 @@
+@import '../../../theme';
+
+.details{
+    .photos{
+        background: url(../../../assets/img/bache.jpg);
+        height:$photo-size;
+    }
+    .map{
+        background: url(../../../assets/img/mapa.JPG);
+        height:$photo-size;
+    }
+    
+    button{
+        width:100%;
+        display: block;
+        padding: 5% 0%;
+    }
+    
+    .desc-container{
+        margin: $section-margin;
+    }
+    .desc-buttons{
+        justify-content: center;
+        flex-direction: row;
+        display: flex;
+        
+        button{
+            display: block;
+            padding: 5% 0%;
+            margin: 0 3%;
+        }
+        #reportar{
+            border-color:black;
+            background-color: black;
+        }
+
+        @media screen and (min-width: $big-screen) {
+            justify-content: space-between;
+            flex-direction: column;
+            button{
+                max-width:80%;
+                display: block;
+                padding: 5% 0%;
+            }
+        }
+    }
+    .link{
+        button{
+            margin-top: 0%;
+            padding: 3% 0%;
+        }
+    }
+    .sprites{
+        .sprite{
+            height:$sprite-size;
+            width:$sprite-size * 1.1;        
+            margin:0% 5%;
+        }
+    }
+}

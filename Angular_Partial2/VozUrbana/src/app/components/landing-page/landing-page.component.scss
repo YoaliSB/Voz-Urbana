@@ -1,0 +1,30 @@
+@import '../../../theme';
+
+body{
+    font-family: $font;
+}
+
+.content{
+    .pic{
+        background: url(../../../assets/img/bellas-artes.jpg);
+        height: 630px;
+        padding: 0px;
+        background-repeat: round;
+    }
+    .slogan-text{
+        font-family: $big-font;
+        font-weight: 700;
+        font-size: 2em;
+        color: $primary-color;
+        padding: 3%;
+        margin: 4%;
+        bottom: 0px;
+        position: absolute;
+        border: 10px solid $primary-color;
+        width: 66%;
+        background: rgba(0,0,0,0.2);
+    }
+    .blurb{
+        padding: 5%;
+    }
+}

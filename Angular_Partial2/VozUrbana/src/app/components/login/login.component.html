@@ -1,44 +1,42 @@
 <div class="container-fluid">
-  <section class="menu">
-      <div class="row">
-          <div class="col-2 col-sm-2 col-md-2 col-lg-2"></div>
-          <div class="col-8 col-sm-8 col-md-8 col-lg-8 text-center">
-              <img class="logo" alt="logo" src="img/logo.png"/>
-          </div>
-          <div class="col-2 col-sm-2 col-md-2 col-lg-2">
-              <form action="register.html">
-                  <button class="menu-buttonRI">Regístrate</button>
-              </form>
-          </div>
-      </div>
-  </section>
-  <br>
   <section class="register-page">
-      <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12 pic">
-              <div class="register-form">
-                  <form [formGroup]="loginForm" (ngSubmit)="enviarFormulario()">
-                      <div class="container form-group">
-                          <h1>Inicia tu sesión</h1>
-                          <p>Por favor ingresa tu mail y contraseña.</p>
-                          <hr>
-                          <label id="email"><b>Email</b></label>
-                          <input class="form-control form-control-lg" type="email" placeholder="Ingresa tu Email" formControlName="email" required/>
-                          <div *ngIf="email.errors?.required" style="color: red">Campo requerido</div>
-                          <div *ngIf="email.invalid" style="color: red">Ingresa un correo válido</div>
-                          <label id="psw"><b>Contraseña</b></label>
-                          <input class="form-control form-control-lg" type="password" placeholder="Ingresa tu Contraseña" formControlName="password" required/>
-                          <div *ngIf="password.invalid" style="color: red">Contraseña muy corta</div>
-                          <div *ngIf="password.errors?.required" style="color: red">Campo requerido</div>
-                          <button type="submit" class="registerbtn btn">Entrar</button>
-                      </div>
-
-                      <div class="container signin">
-                          <p>¿No tienes cuenta? <a href="register.html">Regístrate</a>.</p>
-                      </div>
-                  </form>
+    <div class="register-form">
+      <form [formGroup]="loginForm" (ngSubmit)="enviarFormulario()">
+          <div class="container form-group">
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12 pic">
+                <h1>Inicia tu sesión</h1>
+                <p>Por favor ingresa tu mail y contraseña.</p>
               </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12 pic">
+                <label id="email"><b>Email</b></label>
+                <input class="form-control form-control-lg" type="email" placeholder="Ingresa tu Email" formControlName="email" required/>
+                <div *ngIf="email.errors?.required" style="color: red">Campo requerido</div>
+                <div *ngIf="email.invalid" style="color: red">Ingresa un correo válido</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12 pic">
+                <label id="psw"><b>Contraseña</b></label>
+                <input class="form-control form-control-lg" type="password" placeholder="Ingresa tu Contraseña" formControlName="password" required/>
+                <div *ngIf="password.invalid" style="color: red">Contraseña muy corta</div>
+                <div *ngIf="password.errors?.required" style="color: red">Campo requerido</div>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-sm-4 col-md-4 col-lg-4 align-self-center">
+                <button type="submit" class="submit-btn btn btn-primary">Entrar</button>
+              </div>
+            </div>
           </div>
-      </div>
+
+          <div class="container signin">
+              <p>¿No tienes cuenta? <a href="register.html">Regístrate</a>.</p>
+          </div>
+      </form>
+    </div>
   </section>
 </div>

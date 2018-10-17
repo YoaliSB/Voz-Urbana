@@ -1,52 +1,51 @@
 <div class="container-fluid">
-  <section class="menu">
-      <div class="row">
-          <div class="col-2 col-sm-2 col-md-2 col-lg-2"></div>
-          <div class="col-8 col-sm-8 col-md-8 col-lg-8 text-center">
-              <img class="logo" alt="logo" src="img/logo.png"/>
-          </div>
-          <div class="col-2 col-sm-2 col-md-2 col-lg-2">
-              <form action="login.html">
-                  <button class="menu-buttonRI">Inicia sesión</button>
-              </form>
-          </div>
-      </div>
-  </section>
-  <br>
   <section class="register-page">
-      <div class="row">
-          <div class="col-12 pic">
-              <div class="register-form">
-                  <form [formGroup]="registerForm" (ngSubmit)=enviarFormulario()>
-                      <div class="container form-group">
-                          <h1>Registro de cuenta</h1>
-                          <p>Por favor crea tu cuenta con tu mail.</p>
-                          <hr>
-                          <label id="email"><b>Email</b></label>
-                          <input class="form-control form-control-lg" type="email" placeholder="Ingresa tu Email" formControlName="email" required/>
-                          <div *ngIf="email.errors?.required" style="color: red">Campo requerido</div>
-                          <div *ngIf="email.invalid" style="color: red">Ingresa un correo válido</div>
-
-                          <label id="psw"><b>Contraseña</b></label>
-                          <input class="form-control form-control-lg" type="password" placeholder="Ingresa tu Contraseña" formControlName="password" required/>
-                          <div *ngIf="password.invalid" style="color: red">Contraseña muy corta</div>
-                          <div *ngIf="password.errors?.required" style="color: red">Campo requerido</div>
-
-                          <label id="psw-repeat"><b>Confirmar contraseña</b></label>
-                          <input class="form-control form-control-lg" type="password" placeholder="Confirma tu Contraseña" formControlName="confirmPassword" required/>
-                          <div *ngIf="confirmPassword.invalid" style="color: red">Las contraseñas deben ser iguales y tener al menos 8 caracteres</div>
-                          <div *ngIf="confirmPassword.errors?.required" style="color: red">Campo requerido</div>
-                          <hr>
-                          <div *ngIf="confirmPassword.errors?.matchPassword" style="color: red">Las contraseñas no coinciden</div>
-
-                          <button type="submit" class="registerbtn btn">Registrar</button>
-                      </div>
-                      <div class="container signin">
-                          <p>¿Ya tienes cuenta? <a href="login.html">Entra</a>.</p>
-                      </div>
-                  </form>
+    <div class="register-form">
+      <form [formGroup]="registerForm" (ngSubmit)=enviarFormulario()>
+          <div class="container form-group">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pic">
+                <h1>Registro de cuenta</h1>
+                <p>Por favor crea tu cuenta con tu mail.</p>
               </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pic">
+                <hr>
+                <label id="email"><b>Email</b></label>
+                <input class="form-control form-control-lg" type="email" placeholder="Ingresa tu Email" formControlName="email" required/>
+                <div *ngIf="email.errors?.required" style="color: red">Campo requerido</div>
+                <div *ngIf="email.invalid" style="color: red">Ingresa un correo válido</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pic">
+                <label id="psw"><b>Contraseña</b></label>
+                <input class="form-control form-control-lg" type="password" placeholder="Ingresa tu Contraseña" formControlName="password" required/>
+                <div *ngIf="password.invalid" style="color: red">Contraseña muy corta</div>
+                <div *ngIf="password.errors?.required" style="color: red">Campo requerido</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pic">
+                <label id="psw-repeat"><b>Confirmar contraseña</b></label>
+                <input class="form-control form-control-lg" type="password" placeholder="Confirma tu Contraseña" formControlName="confirmPassword" required/>
+                <div *ngIf="confirmPassword.invalid" style="color: red">Las contraseñas deben ser iguales y tener al menos 8 caracteres</div>
+                <div *ngIf="confirmPassword.errors?.required" style="color: red">Campo requerido</div>
+                <hr>
+                <div *ngIf="confirmPassword.errors?.matchPassword" style="color: red">Las contraseñas no coinciden</div>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 pic">
+                <button type="submit" class="submit-btn btn btn-primary">Registrar</button>
+              </div>
+            </div>
           </div>
-      </div>
+          <div class="container signin">
+              <p>¿Ya tienes cuenta? <a href="login.html">Entra</a>.</p>
+          </div>
+      </form>
+    </div>
   </section>
 </div>
