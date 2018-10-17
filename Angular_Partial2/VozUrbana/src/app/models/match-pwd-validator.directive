@@ -1,0 +1,34 @@
+import { Validator, AbstractControl, NG_VALIDATORS } from '@angular/forms';
+import { Directive, forwardRef, provide, Attribute} from '@angular/core';
+
+@Directive({
+	selector: '[validateEqual][FormControlName], [validateEqual][FormControl], [validateEqual][NgModel]',
+	providers: [
+		provide(NG_VALIDATORS, {useExisting: forwardRef(() => EqualValidator), multi:true})]
+})
+
+export class MatchPwdValidator implements Validator {
+
+	constructor( @Attribute('validateEqual') public validateEqual:string){}
+	validate(c: AbstractControl): { [key: string]: any}{
+		let v = c.value;
+		let e = c.root.find(this.validateEqual);
+		if(e && v!== e.value && !this.reverse){
+			return{
+				validateEqual:false
+			}
+		} 
+		return null;
+	}
+	
+	static matchPassword(AC: AbstractControl){
+		let password = AC.get('password').value;
+		let confirmPassword = AC.get('confirmPassword').value;
+		if(password !== confirmPassword){
+			AC.get('confirmPassword').setErrors({matchPassword: true});
+		}else{
+			return null;
+		}
+	}
+
+}

@@ -20,6 +20,11 @@ import { PublishedEventsComponent } from './components/published-events/publishe
 import { SavedEventsComponent } from './components/saved-events/saved-events.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { HttpClientModule } from '@angular/common/http'; //rest client call http rest service
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { AbstractControl } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +48,9 @@ import { HttpClientModule } from '@angular/common/http'; //rest client call http
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
