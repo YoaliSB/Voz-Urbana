@@ -1,0 +1,20 @@
+@import '../../../theme';
+
+.user-profile{
+    img{
+        max-width: 90px;
+        position: absolute;
+        z-index: 2;
+        right: 5%;
+        top: 2%;
+    }
+}
+
+.container {
+  padding: 6px;
+}
+
+
+.profile-form{
+    @include register-form;
+}

@@ -1,3 +1,50 @@
-<p>
-  edit-profile works!
-</p>
+<div class="tab-content pl-2">
+  <div id="home" class="container tab-pane active"><br>
+    <h3 class="pb-4">Edita tu perfil</h3>
+    <div class="profile-form">
+      <form [formGroup]="editProfileForm" (ngSubmit)=enviarFormulario()>
+        <div class="container form-group">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 pic">
+              <p class="font-weight-bold">Nombre</p>
+              <input type="text" class="form-control form-control-lg" formControlName="name" >
+              <div *ngIf="name.invalid" style="color: red">Nombre muy corto</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 pic">
+              <p class="font-weight-bold">Email</p>
+              <input class="form-control form-control-lg" type="email" placeholder="Ingresa tu Email" formControlName="email" required/>
+              <div *ngIf="email.invalid" style="color: red">Ingresa un correo válido</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 pic">
+              <p class="font-weight-bold">Contraseña</p>
+              <input type="password" class="form-control form-control-lg" formControlName="password" >
+              <div *ngIf="password.invalid" style="color: red">Contraseña muy corta</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 pic">
+              <p class="font-weight-bold">Confirma tu contraseña</p>
+              <input type="password" class="form-control form-control-lg" formControlName="password" >
+              <div *ngIf="password.invalid" style="color: red">Contraseña muy corta</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 pic">
+              <p class="font-weight-bold">Cambia tu foto</p>
+              <input class="form-control form-control-lg" formControlName="fotos" type="file" accept="image/*">
+            </div>
+          </div>
+           <div class="row justify-content-center">
+            <div class="col-sm-4 col-md-4 col-lg-4 align-self-center">
+              <button class="submit-btn btn btn-primary">Editar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
