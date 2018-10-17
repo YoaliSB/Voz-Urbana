@@ -29,8 +29,24 @@ const routes: Routes = [
     { path: 'event-details/:id', component: EventDetailsComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'create-event', component: CreateEventComponent },
-    { path: 'profile', component: ProfileComponent },
-    { path: 'ExploreEvents', component: ExploreEventsComponent },
+    { 
+        path: 'profile', 
+        component: ProfileComponent,
+        children: [
+            { path: 'saved', component: SavedEventsComponent },
+            { path: '', component: EditProfileComponent },
+            { path: 'published', component: PublishedEventsComponent }  
+        ]
+    },
+    { 
+        path: 'ExploreEvents', 
+        component: ExploreEventsComponent,
+        children: [
+            { path: 'new', component: NewEventsComponent },
+            { path: '', component: RelevantEventsComponent },
+            { path: 'create', component: CreateEventComponent }
+        ]
+    },
     { path: 'admin', component: AdminComponent },
     { path: 'police', component: PoliceComponent },
   

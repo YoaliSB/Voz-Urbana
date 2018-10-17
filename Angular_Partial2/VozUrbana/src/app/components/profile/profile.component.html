@@ -9,68 +9,15 @@
           <!-- Nav tabs -->
           <ul class="nav nav-tabs pt-4 pl-2" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" data-toggle="tab" href="#home">Publicado</a>
+              <a class="nav-link active" data-toggle="tab" routerLink="/profile">Editar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#menu1">Salvado</a>
+              <a class="nav-link" data-toggle="tab" routerLink="/profile/saved">Salvado</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#menu2">Editar</a>
+              <a class="nav-link" data-toggle="tab" routerLink="/profile/published">Publicado</a>
             </li>
           </ul>
           <!-- Tab panes -->
-          <div class="tab-content pl-2">
-            <div id="home" class="container tab-pane active"><br>
-              <h3 class="pb-4">Edita tu perfil</h3>
-              <form [formGroup]="editProfileForm" (ngSubmit)="enviarFormulario()">
-                 <p class="font-weight-bold">Nombre</p>
-                  <input type="text" class="form-control form-control-lg" formControlName="name" >
-                  <div *ngIf="name.invalid" style="color: red">Nombre muy corto</div>
-                  <p class="font-weight-bold">Email</p>
-                  <input class="form-control form-control-lg" type="email" placeholder="Ingresa tu Email" formControlName="email" required/>
-                  <div *ngIf="email.invalid" style="color: red">Ingresa un correo válido</div>
-                  <p class="font-weight-bold">Contraseña</p>
-                  <input type="password" class="form-control form-control-lg" formControlName="password" >
-                  <div *ngIf="password.invalid" style="color: red">Contraseña muy corta</div>
-                  <p class="font-weight-bold">Confirma tu contraseña</p>
-                  <input type="password" class="form-control form-control-lg" formControlName="confirmPassword">
-                  <div *ngIf="confirmPassword.invalid" style="color: red">Las contraseñas deben ser iguales y tener al menos 8 caracteres</div>
-                  <p class="font-weight-bold">Cambia tu foto</p>
-                  <input class="form-control form-control-lg" formControlName="fotos" type="file" accept="image/*">
-                  <div class="text-center">
-                  <button class="btn" type="submit" [disabled]="!editProfileForm.valid">Editar</button>
-                  </div>
-              </form>
-            </div>
-
-            <div id="menu2" class="container tab-pane fade"><br>
-              <h3 class="pb-2">Eventos publicados</h3>
-                <table class="table table-hover">
-            <tbody>
-              <tr>
-                <td>Carne asada</td>
-              </tr>
-              <tr>
-                <td>Humo en Paseo Acoxpa</td>
-              </tr>
-            </tbody>
-          </table>
-            </div>
-            <div id="menu1" class="container tab-pane fade"><br>
-              <h3 class="pb-2">Eventos salvados</h3>
-                <table class="table table-hover">
-            <tbody>
-              <tr>
-                <td>Fiesta de Alejandro</td>
-              </tr>
-              <tr>
-                <td>Baches en la Narvarte</td>
-              </tr>
-              <tr>
-                <td>Reunión de primaria</td>
-              </tr>
-            </tbody>
-          </table>
-            </div>
-          </div>
+          <router-outlet></router-outlet>
         </div>
