@@ -1,7 +1,7 @@
 @import '../../../theme';
 
 .container {
-  padding: 6px;
+  @include padded;
 }
 
 
