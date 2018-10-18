@@ -28,11 +28,13 @@
               { "glob": "users.json", "input": "./", "output": "./assets/" }
             ],
             "styles": [
-              "node_modules/bootstrap/scss/bootstrap.scss",
+              "./node_modules/bootstrap/scss/bootstrap.scss",
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.js"
+              "./node_modules/bootstrap/dist/js/bootstrap.js",
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/popper.js/dist/umd/popper.min.js"
             ]
           },
           "configurations": {

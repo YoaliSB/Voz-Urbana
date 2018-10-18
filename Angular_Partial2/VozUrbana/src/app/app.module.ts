@@ -27,6 +27,7 @@ import { AbstractControl } from '@angular/forms';
 import { AdminComponent } from './components/admin/admin.component';
 import { PoliceComponent } from './components/police/police.component';
 import { RoutingModule } from './routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { RoutingModule } from './routing.module';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    RoutingModule
+    RoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
