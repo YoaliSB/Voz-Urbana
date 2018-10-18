@@ -58,3 +58,7 @@
         }
     }
 }
+
+.container {
+  @include padded;
+}

@@ -51,15 +51,15 @@ $photo-size:400px;
 }
 
 @mixin register-form{
-    input[type=text], input[type=password], input[type=email], input[type=date], input[type=file] {
+    input[type=text], input[type=password], input[type=email], input[type=date], input[type=file], .custom-file-input {
         width: 100%;
         padding: 15px;
-        margin: 0;
+        margin: 1% 0;
         display: inline-block;
         border: none;
         background: $input-bg;
     }
-    input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=date]:focus, input[type=file]:focus {
+    input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=date]:focus, input[type=file]:focus, .custom-file-input:hover {
         background-color: #ddd;
         outline: none;
     }
@@ -86,4 +86,8 @@ $photo-size:400px;
     display: inline;
     margin: 0 1%;
     font-size: 1.1em;
+}
+
+@mixin padded{
+    padding: 33px;
 }

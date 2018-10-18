@@ -7,3 +7,7 @@
 .carousel-inner{
     height: 550px;
 }
+
+.container {
+  @include padded;
+}

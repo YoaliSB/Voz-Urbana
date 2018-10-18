@@ -1,13 +1,14 @@
 <div class="tab-content pl-2">
-  <div id="home" class="container tab-pane active"><br>
-    <h3 class="pb-4">Edita tu perfil</h3>
+  <div id="home" class="container tab-pane active">
+    <h3>Edita tu perfil</h3>
+    <hr>
     <div class="profile-form">
       <form [formGroup]="editProfileForm" (ngSubmit)=enviarFormulario()>
         <div class="container form-group">
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 pic">
               <p class="font-weight-bold">Nombre</p>
-              <input type="text" class="form-control form-control-lg" formControlName="name" >
+              <input type="text" placeholder="Ingresa tu nombre" class="form-control form-control-lg" formControlName="name" >
               <div *ngIf="name.invalid" style="color: red">Nombre muy corto</div>
             </div>
           </div>
@@ -21,14 +22,14 @@
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 pic">
               <p class="font-weight-bold">Contraseña</p>
-              <input type="password" class="form-control form-control-lg" formControlName="password" >
+              <input type="password" placeholder="Ingresa tu Contraseña" class="form-control form-control-lg" formControlName="password" >
               <div *ngIf="password.invalid" style="color: red">Contraseña muy corta</div>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 pic">
               <p class="font-weight-bold">Confirma tu contraseña</p>
-              <input type="password" class="form-control form-control-lg" formControlName="password" >
+              <input type="password" placeholder="Repite tu Contraseña" class="form-control form-control-lg" formControlName="password" >
               <div *ngIf="password.invalid" style="color: red">Contraseña muy corta</div>
             </div>
           </div>
@@ -37,11 +38,11 @@
               <p class="font-weight-bold">Cambia tu foto</p>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                  <span class="input-group-text" id="inputGroupFileAddon01">Subir</span>
                 </div>
                 <div class="custom-file">
                   <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                  <label class="custom-file-label" for="inputGroupFile01">Elegir foto</label>
                 </div>
               </div>
             </div>

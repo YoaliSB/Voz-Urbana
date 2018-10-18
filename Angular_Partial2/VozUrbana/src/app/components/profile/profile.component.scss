@@ -11,9 +11,8 @@
 }
 
 .container {
-  padding: 6px;
+  @include padded;
 }
-
 
 .profile-form{
     @include register-form;
