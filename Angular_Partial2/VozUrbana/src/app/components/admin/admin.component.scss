@@ -1,0 +1,13 @@
+@import '../../../theme';
+
+.container {
+  padding: 6px;
+}
+
+
+.register-form{
+    @include register-form;
+    .required-mark{
+    	@include required-mark;
+    }
+}

@@ -12,18 +12,18 @@
             <hr>
             <div class="row">
               <div class="col-sm-12 col-md-12 col-lg-12 pic">
+                <div *ngIf="email.errors?.required" class="required-mark">*</div>
                 <label id="email"><b>Email</b></label>
                 <input class="form-control form-control-lg" type="email" placeholder="Ingresa tu Email" formControlName="email" required/>
-                <div *ngIf="email.errors?.required" style="color: red">Campo requerido</div>
                 <div *ngIf="email.invalid" style="color: red">Ingresa un correo válido</div>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-12 col-md-12 col-lg-12 pic">
+                <div *ngIf="password.errors?.required" class="required-mark">*</div>
                 <label id="psw"><b>Contraseña</b></label>
                 <input class="form-control form-control-lg" type="password" placeholder="Ingresa tu Contraseña" formControlName="password" required/>
                 <div *ngIf="password.invalid" style="color: red">Contraseña muy corta</div>
-                <div *ngIf="password.errors?.required" style="color: red">Campo requerido</div>
               </div>
             </div>
             <div class="row justify-content-center">

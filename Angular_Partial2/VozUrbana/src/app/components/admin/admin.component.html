@@ -2,26 +2,34 @@
 	<h1>¡Bienvenido administrador!</h1>
 	<hr>
 	<h2>Puedes consultar y modificar a los usuarios aquí</h2>
-
-
-	<form [formGroup]="adminForm" (ngSubmit)="enviarFormulario()">
-		<p class="font-weight-bold">Ingresa el correo del usuario</p>
-		<input class="form-control form-control-lg" type="email" placeholder="Ingresa tu Email" formControlName="email" required/>
-	    <div *ngIf="email.errors?.required" style="color: red">Campo requerido</div>
-		<div *ngIf="email.invalid" style="color: red">Ingresa un correo válido</div>
-        <button class="btn">Consultar</button>
-    </form>
-	<div class="card" style="width: 18rem;">
-	  	<div class="card-body">
-		    <h5 class="card-title">{{userModel.name}}</h5>
-		    <p class="card-text">E-mail: {{userModel.mail}}.</p>
-		    <p class="card-text">Tipo de usuario: {{userModel.type}}.</p>
-		    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
-		    	<label>Policía</label>
-		    	<input class="form-control form-control-lg" type="checkbox" formControlName="check">
-		    	<button class="btn" type="submit" (click)="modifyUser()">Modificar</button>
-		    	<button class="btn" type="submit" (click)="deleteUser()">Eliminar usuario</button>
-		    </form>
-  		</div>
+	<div class="register-form">
+		<form [formGroup]="adminForm" (ngSubmit)="enviarFormulario()">
+			<div class="container form-group">
+				<div *ngIf="email.errors?.required" class="required-mark">*</div>
+				<p class="font-weight-bold" style="display:inline">Ingresa el correo del usuario</p>
+				<br>
+				<input class="form-control form-control-lg" type="email" placeholder="Email" formControlName="email" required/>
+				<div *ngIf="email.invalid" style="color: red">Ingresa un correo válido</div>
+		        <button class="btn btn-primary">Consultar</button>
+		    </div>
+	    </form>
+	</div>	
+	<div class="card-body">
+	    <h5 class="card-title">{{userModel.name}}</h5>
+	    <p class="card-text">E-mail: {{userModel.mail}}.</p>
+	    <p class="card-text">Tipo de usuario: {{userModel.type}}.</p>
+	    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+	    	<div class="form-check">
+			  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+			  <label class="form-check-label" for="defaultCheck1">
+			    Policía
+			  </label>
+			  <br><br>
+			</div>
+	    	<button class="btn btn-primary" type="submit" (click)="modifyUser()">Modificar</button>
+	    	<br>
+	    	<br>
+	    	<button class="btn btn-primary" type="submit" (click)="deleteUser()">Eliminar usuario</button>
+	    </form>
 	</div>
 </div>

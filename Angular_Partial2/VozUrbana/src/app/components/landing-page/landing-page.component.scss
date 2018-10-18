@@ -9,7 +9,11 @@ body{
         background: url(../../../assets/img/bellas-artes.jpg);
         height: 630px;
         padding: 0px;
-        background-repeat: round;
+        background-position: 50%;
+        @media screen and (min-width: $medium-screen) {
+            background-position:unset;
+            background-repeat:round;
+        }
     }
     .slogan-text{
         font-family: $big-font;

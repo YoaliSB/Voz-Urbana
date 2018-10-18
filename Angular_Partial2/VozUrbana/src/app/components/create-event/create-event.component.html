@@ -12,22 +12,19 @@
           <div class="container">
              <div class="row">
                  <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div *ngIf="titulo.errors?.required" class="required-mark">*</div>
                      <label>Título</label>
                      <input id="titulo" class="form-control form-control-lg" type="text" formControlName="titulo" required>
-                    <div *ngIf="titulo.errors?.required" style="color: red">Campo requerido</div>
-                 </div>
-             </div>
-             <div class="row">
-                 <div class="col-sm-12 col-md-12 col-lg-12">
-                     <label>¿Dónde?</label>
                  </div>
              </div>
              <div class="row">
                  <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div *ngIf="direccion.errors?.required" class="required-mark">*</div>
+                     <label>¿Dónde?</label>
                      <input class="form-control form-control-lg" type="text" formControlName="direccion" placeholder="Dirección" required>
-                    <div *ngIf="direccion.errors?.required" style="color: red">Campo requerido</div>
+                     <div *ngIf="descripcion.errors?.required" class="required-mark">*</div>
+                     <label>Descripción</label>
                      <input class="form-control form-control-lg" type="text" formControlName="descripcion" placeholder="Descripción" required>
-                    <div *ngIf="descripcion.errors?.required" style="color: red">Campo requerido</div>
                  </div>
                  <div class="col-sm-6 col-md-6 col-lg-6 ">
                      <div id="map">
@@ -42,15 +39,22 @@
              </div>
              <div class="row">
                  <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div *ngIf="fecha.errors?.required" class="required-mark">*</div>
                     <label>Fecha</label>
                      <input class="form-control form-control-lg" formControlName="fecha" type="date" required>
-                    <div *ngIf="fecha.errors?.required" style="color: red">Campo requerido</div>
                  </div>
              </div>
              <div class="row">
                  <div class="col-sm-12 col-md-12 col-lg-12">
-                     <label>Fotos</label>
-                     <input class="form-control form-control-lg" formControlName="fotos" type="file" accept="image/*" multiple>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                      </div>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                      </div>
+                    </div>
                  </div>
              </div>
              <div class="row justify-content-center">

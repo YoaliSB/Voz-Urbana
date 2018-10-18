@@ -15,4 +15,7 @@
     input{
         width: 100%;
     }
+    .required-mark{
+    	@include required-mark;
+    }
 }
