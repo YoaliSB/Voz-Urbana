@@ -11,7 +11,7 @@ import { User } from '../../models/user';
 })
 export class AdminComponent implements OnInit {
 
-  userModel = new User('nombre','example@mail.com','*****','tipo de usuario');
+  userModel = new User('nombre','example@mail.com','*****','usuario');
 
   adminForm = new FormGroup({
     email: new FormControl()
