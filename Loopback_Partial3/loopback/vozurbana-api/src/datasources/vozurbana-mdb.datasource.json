@@ -1,0 +1,10 @@
+{
+  "name": "vozurbana_mdb",
+  "connector": "mongodb",
+  "url": "mongodb://A01335037:vozurbana18@ds241493.mlab.com:41493/vozurbana",
+  "host": "ds241493.mlab.com",
+  "port": 41493,
+  "user": "A01335037",
+  "password": "vozurbana18",
+  "database": "vozurbana"
+}
