@@ -18,14 +18,26 @@ export class VozurbanaApiApplication extends BootMixin(RestApplication){
     super(options);
 
     this.projectRoot = __dirname;
+    // Set up default home page
+    this.static('/', path.join(__dirname, '../../public'));
+
+    // Set up the custom sequence
+    this.sequence(MySequence);
 
     this.component(AuthenticationComponent);
     this.bind(AuthenticationBindings.STRATEGY).toProvider(
       MyAuthStrategyProvider,
     );
 
-    // Set up the custom sequence
-    this.sequence(MySequence);
+     // Customize @loopback/boot Booter Conventions here
+    this.bootOptions = {
+      controllers: {
+        // Customize ControllerBooter Conventions here
+        dirs: ['controllers'],
+        extensions: ['.controller.js'],
+        nested: true,
+      },
+    };
   }
 
   async start() {

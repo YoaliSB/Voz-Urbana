@@ -1,5 +1,3 @@
-// Uncomment these imports to begin using these cool features!
-
 import {RepositoryMixin} from '@loopback/repository';
 
 import {inject} from '@loopback/context';
