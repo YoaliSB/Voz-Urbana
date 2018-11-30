@@ -44,6 +44,7 @@
     "src"
   ],
   "dependencies": {
+    "@loopback/authentication": "^1.0.6",
     "@loopback/boot": "^1.0.4",
     "@loopback/context": "^1.1.0",
     "@loopback/core": "^1.1.0",
@@ -53,11 +54,15 @@
     "@loopback/service-proxy": "^1.0.2",
     "loopback-connector-mongodb": "^4.0.0",
     "octokat": "^0.10.0",
+    "passport": "^0.4.0",
+    "passport-http": "^0.3.0",
     "star-wars-api": "^1.0.1"
   },
   "devDependencies": {
     "@loopback/build": "^1.0.1",
     "@loopback/testlab": "^1.0.1",
-    "@types/node": "^10.11.2"
+    "@types/node": "^10.11.2",
+    "@types/passport": "^0.4.7",
+    "@types/passport-http": "^0.3.6"
   }
 }

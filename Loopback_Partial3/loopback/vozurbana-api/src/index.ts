@@ -1,5 +1,6 @@
 import {VozurbanaApiApplication} from './application';
 import {ApplicationConfig} from '@loopback/core';
+import {RepositoryMixin} from '@loopback/repository';
 
 export {VozurbanaApiApplication};
 
