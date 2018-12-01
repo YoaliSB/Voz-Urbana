@@ -22,7 +22,7 @@ export class EventoRepository extends DefaultCrudRepository<
     @inject('datasources.vozurbana_mdb') dataSource: Vozurbana_mdbDataSource,
     @repository(UsuarioRepository)protected usuarioRepo: UsuarioRepository,
     @repository.getter('UsuarioRepository')
-    usuarioRepositoryGetter: Getter<UsuarioRepository>,
+    usuarioRepositoryGetter: Getter<UsuarioRepository>
   ) {
     super(Evento, dataSource);
     this.usuario = this._createBelongsToAccessorFor(

@@ -17,6 +17,11 @@ import {
 } from '@loopback/rest';
 import {Usuario, Evento} from '../models';
 import {UsuarioRepository, EventoRepository} from '../repositories';
+import {
+  AuthenticationBindings,
+  AuthenticationMetadata,
+  UserProfile,
+} from '@loopback/authentication';
 
 export class UsuarioController {
   constructor(

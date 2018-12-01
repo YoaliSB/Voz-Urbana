@@ -1,7 +1,6 @@
 import {Usuario, Evento} from '../models';
 import { EventoRepository } from './evento.repository';
 import {Vozurbana_mdbDataSource} from '../datasources';
-// import {inject} from '@loopback/core';
 import {post, param, requestBody} from '@loopback/rest';
 import {
   DefaultCrudRepository,
@@ -12,9 +11,7 @@ import {
 import {Getter, inject} from '@loopback/context';
 
 export class UsuarioRepository extends DefaultCrudRepository<
-  Usuario,
-  typeof Usuario.prototype.mail
-> {
+  Usuario,typeof Usuario.prototype.mail>  {
 public readonly eventos: HasManyRepositoryFactory<
     Evento,
     typeof Usuario.prototype.mail

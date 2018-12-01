@@ -2,7 +2,7 @@ import {
   Count,
   CountSchema,
   Filter,
-  repository,
+  repository, RepositoryMixin,
   Where,
 } from '@loopback/repository';
 import {
@@ -17,13 +17,20 @@ import {
 } from '@loopback/rest';
 import {Evento, Usuario} from '../models';
 import {EventoRepository, UsuarioRepository} from '../repositories';
+import {inject} from '@loopback/context';
+import {
+  AuthenticationBindings,
+  UserProfile,
+  authenticate,
+} from '@loopback/authentication';
 
 export class EventoController {
-  constructor(
+  constructor( 
     @repository(EventoRepository)
     public eventoRepository : EventoRepository,
   ) {}
 
+  @authenticate('user')
   @get('/eventos/{id}/usuario')
     async getUsuario(
     @param.path.string('id') eventoId: typeof Evento.prototype.id,
@@ -31,6 +38,7 @@ export class EventoController {
     return await this.eventoRepository.usuario(eventoId);
   }
 
+  @authenticate('user')
   @post('/eventos', {
     responses: {
       '200': {
@@ -43,6 +51,7 @@ export class EventoController {
     return await this.eventoRepository.create(evento);
   }
 
+  @authenticate('user')
   @get('/eventos/count', {
     responses: {
       '200': {
@@ -57,6 +66,7 @@ export class EventoController {
     return await this.eventoRepository.count(where);
   }
 
+  @authenticate('user')
   @get('/eventos', {
     responses: {
       '200': {
@@ -75,6 +85,7 @@ export class EventoController {
     return await this.eventoRepository.find(filter);
   }
 
+  @authenticate('user')
   @patch('/eventos', {
     responses: {
       '200': {
@@ -90,6 +101,7 @@ export class EventoController {
     return await this.eventoRepository.updateAll(evento, where);
   }
 
+  @authenticate('user')
   @get('/eventos/{id}', {
     responses: {
       '200': {
@@ -102,6 +114,7 @@ export class EventoController {
     return await this.eventoRepository.findById(id);
   }
 
+  @authenticate('user')
   @patch('/eventos/{id}', {
     responses: {
       '204': {
@@ -109,7 +122,6 @@ export class EventoController {
       },
     },
   })
-
   async updateById(
     @param.path.string('id') id: string,
     @requestBody() evento: Evento,
@@ -117,6 +129,7 @@ export class EventoController {
     await this.eventoRepository.updateById(id, evento);
   }
 
+  @authenticate('user')
   @del('/eventos/{id}', {
     responses: {
       '204': {
