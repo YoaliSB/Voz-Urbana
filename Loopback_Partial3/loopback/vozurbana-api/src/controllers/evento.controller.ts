@@ -101,7 +101,7 @@ export class EventoController {
     return await this.eventoRepository.updateAll(evento, where);
   }
 
-  @authenticate('user')
+  @authenticate('cop')
   @get('/eventos/{id}', {
     responses: {
       '200': {
@@ -129,7 +129,7 @@ export class EventoController {
     await this.eventoRepository.updateById(id, evento);
   }
 
-  @authenticate('user')
+  @authenticate('owner')
   @del('/eventos/{id}', {
     responses: {
       '204': {

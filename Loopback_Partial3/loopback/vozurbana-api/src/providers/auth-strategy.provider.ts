@@ -70,7 +70,7 @@ export class MyAuthStrategyProvider implements Provider<Strategy | undefined> {
   ) {
     try{
       let user = await this.userRepo.findById(username);
-      if(user.pwd === password){
+      if(user.pwd === password && user.type === "admin"){
         callback(null, user);
       }
       else{
@@ -88,7 +88,7 @@ export class MyAuthStrategyProvider implements Provider<Strategy | undefined> {
   ) {
     try{
       let user = await this.userRepo.findById(username);
-      if(user.pwd === password){
+      if(user.pwd === password && user.type === "cop"){
         callback(null, user);
       }
       else{
