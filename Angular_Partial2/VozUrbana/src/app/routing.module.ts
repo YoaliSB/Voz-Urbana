@@ -22,6 +22,8 @@ import { SavedEventsComponent } from './components/saved-events/saved-events.com
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { PoliceComponent } from './components/police/police.component';
+import { PoliceStatsComponent } from './components/police-stats/police-stats.component';
+import { PoliceMainComponent } from './components/police-main/police-main.component';
 
 const routes: Routes = [
     { path: '', component: LandingPageComponent },
@@ -48,7 +50,14 @@ const routes: Routes = [
         ]
     },
     { path: 'admin', component: AdminComponent },
-    { path: 'police', component: PoliceComponent },
+    { 
+        path: 'police',
+        component: PoliceComponent,
+        children: [
+            { path: 'stats', component: PoliceStatsComponent },
+            { path: '', component: PoliceMainComponent }
+        ]
+    },
   
   ];
   

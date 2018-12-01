@@ -26,6 +26,8 @@ import { FormsModule } from '@angular/forms';
 import { AbstractControl } from '@angular/forms';
 import { AdminComponent } from './components/admin/admin.component';
 import { PoliceComponent } from './components/police/police.component';
+import { PoliceStatsComponent } from './components/police-stats/police-stats.component';
+import { PoliceMainComponent } from './components/police-main/police-main.component';
 import { RoutingModule } from './routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -50,7 +52,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SavedEventsComponent,
     EditProfileComponent,
     AdminComponent,
-    PoliceComponent
+    PoliceComponent,
+    PoliceStatsComponent,
+    PoliceMainComponent
   ],
   imports: [
     BrowserModule,
