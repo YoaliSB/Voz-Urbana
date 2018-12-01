@@ -3,6 +3,7 @@ import {RepositoryMixin} from '@loopback/repository';
 import {RestApplication, RestServer, RestBindings} from '@loopback/rest';
 import {ServiceMixin} from '@loopback/service-proxy';
 import {MySequence} from './sequence';
+import {UsuarioRepository, EventoRepository} from './repositories';
 import {
   AuthenticationComponent,
   AuthenticationBindings,
@@ -13,7 +14,7 @@ import {ApplicationConfig} from '@loopback/core';
 import * as path from 'path';
 
 
-export class VozurbanaApiApplication extends BootMixin(RestApplication){
+export class VozurbanaApiApplication extends BootMixin(ServiceMixin(RepositoryMixin(RestApplication))){
   constructor(options?: ApplicationConfig) {
     super(options);
 
@@ -48,8 +49,6 @@ export class VozurbanaApiApplication extends BootMixin(RestApplication){
     console.log(`REST server running on port: ${port}`);
   }
 }
-
-
 
 /* El código anterior por si las dudas:
 export class VozurbanaApiApplication extends BootMixin(

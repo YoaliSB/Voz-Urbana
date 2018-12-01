@@ -52,10 +52,12 @@
     "@loopback/repository": "^1.0.4",
     "@loopback/rest": "^1.3.0",
     "@loopback/service-proxy": "^1.0.2",
+    "@types/passport-local": "^1.0.33",
     "loopback-connector-mongodb": "^4.0.0",
     "octokat": "^0.10.0",
     "passport": "^0.4.0",
     "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
     "star-wars-api": "^1.0.1"
   },
   "devDependencies": {

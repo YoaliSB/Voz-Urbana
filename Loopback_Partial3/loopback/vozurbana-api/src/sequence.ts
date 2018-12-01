@@ -37,11 +37,9 @@ export class MySequence implements SequenceHandler {
         const user = await this.authenticateRequest(request);
 
         // Verify user roles cases
-        //await this.verifyUserRole(<UserRoleData>user)
+        //const type = await this.verifyUserRole(<UserRoleData>user)
       }
 
-
-      //await this.authenticateRequest(request);
       const args = await this.parseParams(request, route);
       const result = await this.invoke(route, args);
       this.send(response, result);
