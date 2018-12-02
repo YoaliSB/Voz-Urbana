@@ -16,8 +16,13 @@ export class UserServiceService {
   constructor(private http: HttpClient) { }
 
   getUser():Observable<any>{
-    // Make the HTTP request:
-    return this.http.get('http://localhost:4200/assets/users.json').pipe(
+    //Make the HTTP request:
+    var headers_object = new HttpHeaders();
+    headers_object.append("Authorization", "Basic " + btoa("admin:admin"));
+    const httpOptions = {
+      headers: headers_object
+    };
+    return this.http.get('http://127.0.0.1:3000/users',httpOptions).pipe(
       map(function(res){
         return res;
       })
