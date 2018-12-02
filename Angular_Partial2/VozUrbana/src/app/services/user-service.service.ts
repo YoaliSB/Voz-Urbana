@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
-//import {Client} from '../models/client';
+import {User} from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +22,18 @@ export class UserServiceService {
     const httpOptions = {
       headers: headers_object
     };
-    return this.http.get('http://127.0.0.1:3000/users',httpOptions).pipe(
+    return this.http.get('http://127.0.0.1:3000/usuarios', this.httpOptions).pipe(
       map(function(res){
         return res;
       })
     );
+  }
+
+  postUser(user : User):Observable<any>{
+    return this.http
+      .post('http://127.0.0.1:3000/usuarios', user, this.httpOptions).pipe(
+        map(function(res){
+          return res;
+        }));
   }
 }

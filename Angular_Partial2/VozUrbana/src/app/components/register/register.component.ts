@@ -13,7 +13,7 @@ import { RxwebValidators, RxFormBuilder } from '@rxweb/reactive-form-validators'
 })
 export class RegisterComponent implements OnInit {
 
-  userModel = new User('nombre','example@mail.com','*****','type');
+  userModel = new User('nombre','example@mail.com','*****','user');
 
   registerForm = new FormGroup({
     email: new FormControl(),
@@ -36,8 +36,10 @@ export class RegisterComponent implements OnInit {
   enviarFormulario(){
     let forma = this.registerForm.value;
     this.userModel.mail = this.registerForm.value.email;
-    this.userModel.pwd = this.registerForm.value.password;
-    this.router.navigate(['/ExploreEvents']);
+    this.userModel.pwd = this.registerForm.value.password;  
+    this.postUser();
+    // console.log(response);
+    // this.router.navigate(['/ExploreEvents']);
   }
 
   ngOnInit() {
@@ -48,6 +50,20 @@ export class RegisterComponent implements OnInit {
     this.rest.getUser().subscribe((data: any) => {
       console.log(data);
    });
+  }
+
+  postUser(){
+    this.rest.postUser(this.userModel).subscribe(
+      (res: any) => {
+        console.log('HTTP response', res);
+        this.router.navigate(['/ExploreEvents']);
+      },
+      (err: any) => {
+        console.log('HTTP Error', err, err.status);
+        alert('No se pudo crear el usuario');
+      },
+      () => console.log('HTTP request completed.')
+    );
   }
 
   get email():any{
