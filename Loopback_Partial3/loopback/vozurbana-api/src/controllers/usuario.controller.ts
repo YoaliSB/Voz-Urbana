@@ -29,14 +29,6 @@ export class UsuarioController {
     public usuarioRepository : UsuarioRepository,
   ) {}
 
-  @post('/usuarios/{id}/eventos')
-    async createEvent(
-      @param.path.string('id') mail: typeof Usuario.prototype.mail,
-      @requestBody() eventoData: Evento,
-    ): Promise<Evento> {
-      return await this.usuarioRepository.eventos(mail).create(eventoData);
-    }
-
   @post('/usuarios', {
     responses: {
       '200': {

@@ -17,14 +17,7 @@ public readonly eventos: HasManyRepositoryFactory<
     typeof Usuario.prototype.mail
   >;
   constructor(
-    @inject('datasources.vozurbana_mdb') dataSource: Vozurbana_mdbDataSource,
-    @repository.getter('EventoRepository')
-    getEventoRepository: Getter<EventoRepository>,
-  ) {
+    @inject('datasources.vozurbana_mdb') dataSource: Vozurbana_mdbDataSource) {
     super(Usuario, dataSource);
-    this.eventos = this._createHasManyRepositoryFactoryFor(
-    'eventos',
-    getEventoRepository,
-    );
   }
 }

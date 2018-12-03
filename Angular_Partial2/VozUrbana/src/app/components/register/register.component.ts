@@ -38,12 +38,6 @@ export class RegisterComponent implements OnInit {
     this.userModel.mail = this.registerForm.value.email;
     this.userModel.pwd = this.registerForm.value.password;  
     this.postUser();
-    // console.log(response);
-    // this.router.navigate(['/ExploreEvents']);
-  }
-
-  ngOnInit() {
-  	this.getUser();
   }
 
   getUser(){

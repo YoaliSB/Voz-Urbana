@@ -8,6 +8,8 @@ import {User} from '../models/user';
   providedIn: 'root'
 })
 export class UserServiceService {
+
+  USER_URL = 'http://127.0.0.1:3000/usuarios';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json'
@@ -22,7 +24,15 @@ export class UserServiceService {
     const httpOptions = {
       headers: headers_object
     };
-    return this.http.get('http://127.0.0.1:3000/usuarios', this.httpOptions).pipe(
+    return this.http.get(this.USER_URL, this.httpOptions).pipe(
+      map(function(res){
+        return res;
+      })
+    );
+  }
+
+  getUserById(mail : String):Observable<any>{
+    return this.http.get(this.USER_URL + '/' + mail, this.httpOptions).pipe(
       map(function(res){
         return res;
       })
@@ -31,7 +41,15 @@ export class UserServiceService {
 
   postUser(user : User):Observable<any>{
     return this.http
-      .post('http://127.0.0.1:3000/usuarios', user, this.httpOptions).pipe(
+      .post(this.USER_URL, user, this.httpOptions).pipe(
+        map(function(res){
+          return res;
+        }));
+  }
+
+  patchUser(user : User):Observable<any>{
+    return this.http
+      .patch(this.USER_URL + '/' + user.mail, user, this.httpOptions).pipe(
         map(function(res){
           return res;
         }));

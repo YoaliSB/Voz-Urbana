@@ -44,21 +44,38 @@ export class EditProfileComponent implements OnInit {
     this.userModel.name = this.editProfileForm.value.name;
     this.userModel.mail = this.editProfileForm.value.email;
     this.userModel.pwd = this.editProfileForm.value.password;
-    this.router.navigate(['/ExploreEvents']);
+    this.userModel.type = "user";
+    this.patchUser();
   }
 
   ngOnInit() {
-    this.getUser();
+    //this.getUserById(//mail del monito);
   }
 
   getUser(){
-    this.rest.getUser().subscribe((data: any) => {
-      console.log(data);
-      this.nombre=data[2]["name"];
-      this.mail=data[2]["mail"];
-      this.psw=data[2]["pwd"];
-      this.tipo=data[2]["type"];
-   });
+    this.rest.getUserById("string@string.com").subscribe(
+      (data: any) => {
+        console.log(data);
+        this.nombre=data["name"];
+        this.mail=data["mail"];
+        this.psw=data["pwd"];
+        this.tipo=data["type"];
+      },
+      (err : any) => {
+        console.log('HTTP Error', err, err.status);
+        alert('No se encontró el usuario');
+      });
+  }
+
+  patchUser(){
+    this.rest.patchUser(this.userModel).subscribe(
+      (data: any) => {
+        console.log(data);
+      },
+      (err : any) => {
+        console.log('HTTP Error', err, err.status);
+        alert('Hubo un error al realizar los cambios');
+      });
   }
 
   get name():any{
