@@ -32,6 +32,7 @@ export class EventServiceService {
   }
 
   getEvents():Observable<any>{
+  console.log(this.creds);
     const httpOptions = {
       headers: {'Authorization': "Basic " + btoa(this.creds),
       'Content-Type': 'application/json'

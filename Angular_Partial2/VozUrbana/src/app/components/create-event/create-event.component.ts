@@ -50,6 +50,8 @@ export class CreateEventComponent implements OnInit {
 
   enviarFormulario(){
     let forma = this.createEventForm.value;
+    let random = Math.floor(Math.random() * 10000) + 9;  
+    this.eventModel.id = random.toString();
     this.eventModel.titulo = this.createEventForm.value.titulo;
     this.eventModel.direccion = this.createEventForm.value.direccion;
     this.eventModel.descripcion = this.createEventForm.value.descripcion;

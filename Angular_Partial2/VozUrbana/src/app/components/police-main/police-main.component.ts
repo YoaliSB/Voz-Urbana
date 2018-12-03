@@ -26,13 +26,14 @@ export class PoliceMainComponent implements OnInit {
         this.router.navigate(['/ExploreEvents']);
       }
     }
+    this.getEvents();
   }
 
   getEvents(){
     this.rest.getEvents().subscribe((data: any) => {
       console.log(data);
       for(var i=0;i<data.length;i++){
-      	if(data[i]["tipo"]=="crimen"){
+      	if(data[i]["tipo"]=="criminal"){
       		this.events.push(data[i]);
       	}
       }
