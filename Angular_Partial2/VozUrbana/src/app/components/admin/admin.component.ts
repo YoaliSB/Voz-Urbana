@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
 import { UserServiceService } from '../../services/user-service.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { User } from '../../models/user';
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'app-admin',
@@ -23,7 +23,7 @@ export class AdminComponent implements OnInit {
 
   modify = false;
 
-  constructor(private rest: UserServiceService, private formBuilder: FormBuilder) { 
+  constructor(private rest: UserServiceService, private formBuilder: FormBuilder, private router: Router) { 
     this.createForm();
     this.createForm2();
   }
@@ -107,7 +107,14 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getUser();
+    let user = this.rest.getCurrentUser();
+    if(user == null){
+      this.router.navigate(['/ExploreEvents']);
+    } else{
+      if(user.type !== "admin"){
+        this.router.navigate(['/ExploreEvents']);
+      }
+    }
   }
 
   getUser(){

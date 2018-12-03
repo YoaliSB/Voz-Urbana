@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Evento } from '../../models/evento';
 import { EventServiceService } from 'src/app/services/event-service.service';
+import { UserServiceService } from 'src/app/services/user-service.service';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -16,13 +17,17 @@ export class ExploreEventsComponent implements OnInit {
 
 
   events:Event[];
-  constructor(private rest: EventServiceService, config: NgbCarouselConfig) { 
+  constructor(private rest: EventServiceService, config: NgbCarouselConfig, private userRest: UserServiceService, private router: Router) { 
     config.interval = 10000;
   }
 
   ngOnInit() {
-    this.getEvents();
+    let user = this.userRest.getCurrentUser();
+    if(user == null){
+      this.router.navigate(['/']);
+    } 
   }
+
   getEvents(){
     this.rest.getEvents().subscribe(
     (data: any) => {
