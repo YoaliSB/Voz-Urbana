@@ -1,0 +1,11 @@
+@import '../../../theme';
+
+td{
+	@include td-chart;
+}
+
+table{
+	@include table-chart;
+	margin-left:auto; 
+    margin-right:auto;
+}
