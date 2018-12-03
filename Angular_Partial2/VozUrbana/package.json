@@ -23,6 +23,7 @@
     "@ionic/angular": "^4.0.0-beta.17",
     "@ng-bootstrap/ng-bootstrap": "^4.0.0",
     "@rxweb/reactive-form-validators": "^1.1.12",
+    "@types/googlemaps": "^3.30.16",
     "angular-chart.js": "^1.1.1",
     "angular-popper": "^2.0.0",
     "bootstrap": "^4.1.3",

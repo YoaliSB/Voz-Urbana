@@ -15,9 +15,10 @@ export class EventServiceService {
       'Content-Type':  'application/json'
     })
   };
-
+  events: Evento ;
   EVENT_URL = 'http://127.0.0.1:3000/eventos';
   USER_URL = 'http://127.0.0.1:3000/usuarios';
+  MAP_URL = 'http://127.0.0.1:3000/maps';
   creds = ":";
 
   constructor(private http: HttpClient, userService: UserServiceService) { 
@@ -43,7 +44,7 @@ export class EventServiceService {
 
   getEvent(id): Observable<any> {
   const httpOptions = {
-      headers: {'Authorization': "Basic " + btoa(this.creds),
+      headers: {'Authorization': "Basic " + btoa("sb.yoali@gmail.com:asdfghjk"),
       'Content-Type': 'application/json'
     }};
   return this.http.get(this.EVENT_URL + '/' + id, httpOptions).pipe(
@@ -51,7 +52,6 @@ export class EventServiceService {
       return res;
     }));
   }
-
   postEvent(event : Evento):Observable<any>{
     const httpOptions = {
       headers: {'Authorization': "Basic " + btoa(this.creds),
@@ -71,4 +71,10 @@ export class EventServiceService {
       })
     );
   }
+  getEventLatLon(id): Observable<any> {
+    return this.http.get(this.MAP_URL + '/' + "Chapultepec",this.httpOptions).pipe(
+      map(function(res){
+        return res;
+      }));
+    }
 }
