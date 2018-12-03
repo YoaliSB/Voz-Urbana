@@ -62,6 +62,7 @@ export class UserServiceService {
   }
 
   patchUser(user : User):Observable<any>{
+    console.log(this.USER_URL+'/'+user.mail);
     return this.http
       .patch(this.USER_URL + '/' + user.mail, user, this.httpOptions).pipe(
         map(function(res){
