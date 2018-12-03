@@ -3,17 +3,21 @@ import { ActivatedRoute } from "@angular/router";
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Event } from '../../models/event';
 import { EventServiceService } from 'src/app/services/event-service.service';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
   selector: 'app-explore-events',
   templateUrl: './explore-events.component.html',
-  styleUrls: ['./explore-events.component.scss']
+  styleUrls: ['./explore-events.component.scss'],
+  providers: [ NgbCarouselConfig ]
 })
 export class ExploreEventsComponent implements OnInit {
 
   events:Event[];
-  constructor(private rest: EventServiceService) { }
+  constructor(private rest: EventServiceService, config: NgbCarouselConfig) { 
+    config.interval = 10000;
+  }
 
   ngOnInit() {
     this.getEvents();
