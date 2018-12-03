@@ -22,18 +22,9 @@
                 <p>{{events.descripcion}}</p>
             </div>
             <div class="col-md-3 col-lg-3 col-sm-12 desc-buttons">
-                <button class="btn btn-primary" id="reportar" (click)="modifyUser()">Reportar</button>
-                <button class="btn btn-primary" id="quejas" (click)="modifyUser()">Marcar resuelto</button>
+                <button class="btn btn-primary" id="reportar" (click)="reportEvent()">Reportar</button><br>
+                <button class="btn btn-primary" id="resuelto" (click)="resolveEvent()">Marcar resuelto</button>
             </div> 
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-lg-6 col-sm-12 link pb-4">
-            </div>
-            <div class="col-md-6 col-lg-6 col-sm-12 sprites text-center">
-                <img alt="Twitter" class="sprite" src="../../../assets/img/twitter.png"/>
-                <img alt="Facebook" class="sprite" src="../../../assets/img/fb.png"/>
-                <img alt="Hyperlink" class="sprite" src="../../../assets/img/share-link.png"/>
-            </div>
         </div>
     </section>
 </div>
