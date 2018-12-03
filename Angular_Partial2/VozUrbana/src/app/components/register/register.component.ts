@@ -13,6 +13,10 @@ import { RxwebValidators, RxFormBuilder } from '@rxweb/reactive-form-validators'
 })
 export class RegisterComponent implements OnInit {
 
+  ngOnInit(){
+  
+  }
+
   userModel = new User('nombre','example@mail.com','*****','user');
 
   registerForm = new FormGroup({
