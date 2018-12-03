@@ -10,6 +10,10 @@ import {User} from '../models/user';
 export class UserServiceService {
 
   USER_URL = 'http://127.0.0.1:3000/usuarios';
+
+  currentUser = null;
+  creds = null;
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json'
@@ -17,10 +21,20 @@ export class UserServiceService {
   };
   constructor(private http: HttpClient) { }
 
+  setUser(user: User){
+    this.currentUser = user;
+    this.creds = this.currentUser.mail + ":" + this.currentUser.pwd;
+    console.log("current", this.currentUser);
+  }
+
+  public getCurrentUser(){
+    return this.currentUser;
+  }
+
   getUser():Observable<any>{
     //Make the HTTP request:
     var headers_object = new HttpHeaders();
-    headers_object.append("Authorization", "Basic " + btoa("admin:admin"));
+    headers_object.append("Authorization", "Basic " + btoa(this.creds));
     const httpOptions = {
       headers: headers_object
     };

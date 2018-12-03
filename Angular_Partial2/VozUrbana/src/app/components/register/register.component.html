@@ -12,6 +12,14 @@
             <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pic">
                 <hr>
+                <div *ngIf="name.errors?.required" class="required-mark">*</div>
+                <label id="name"><b>Nombre</b></label>
+                <input class="form-control form-control-lg" type="text" placeholder="Ingresa tu nombre" formControlName="name" required/>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pic">
+                <hr>
                 <div *ngIf="email.errors?.required" class="required-mark">*</div>
                 <label id="email"><b>Email</b></label>
                 <input class="form-control form-control-lg" type="email" placeholder="Ingresa tu Email" formControlName="email" required/>

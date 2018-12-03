@@ -13,7 +13,7 @@ export class EventDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private rest: EventServiceService) { }
 
-  events: Evento = new Evento('','','','','','', '');
+  events: Evento = new Evento('','','','','','evento',false);
 
   ngOnInit() {
   	this.route.params.subscribe(params => {

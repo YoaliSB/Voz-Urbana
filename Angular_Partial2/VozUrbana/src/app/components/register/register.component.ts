@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   userModel = new User('nombre','example@mail.com','*****','user');
 
   registerForm = new FormGroup({
+    name: new FormControl(),
     email: new FormControl(),
     password: new FormControl(),
     confirmPassword: new FormControl()
@@ -27,6 +28,7 @@ export class RegisterComponent implements OnInit {
 
   createForm(){
     this.registerForm = this.formBuilder.group({
+      name: new FormControl('',[Validators.required]),
       email: new FormControl('',[Validators.required, Validators.email]),
       password: new FormControl('',[Validators.required,Validators.minLength(8)]),
       confirmPassword: new FormControl('',[Validators.required,Validators.minLength(8),RxwebValidators.compare({fieldName: 'password'})])
@@ -35,6 +37,7 @@ export class RegisterComponent implements OnInit {
 
   enviarFormulario(){
     let forma = this.registerForm.value;
+    this.userModel.name = this.registerForm.value.name;
     this.userModel.mail = this.registerForm.value.email;
     this.userModel.pwd = this.registerForm.value.password;  
     this.postUserRequest();
@@ -62,6 +65,10 @@ export class RegisterComponent implements OnInit {
       },
       () => console.log('HTTP request completed.')
     );
+  }
+
+  get name():any{
+    return this.registerForm.get('name');
   }
 
   get email():any{

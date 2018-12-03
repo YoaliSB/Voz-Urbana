@@ -11,7 +11,7 @@ import { Evento } from '../../models/evento';
 })
 export class CreateEventComponent implements OnInit {
 
-  eventModel = new Evento('id','Título','Dirección','Descripción','Link','Fecha');
+  eventModel = new Evento('Título','Dirección','Descripción','Link','Fecha', 'evento', false);
 
   createEventForm = new FormGroup({
   	titulo: new FormControl(),

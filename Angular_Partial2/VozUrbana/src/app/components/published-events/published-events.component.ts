@@ -15,17 +15,17 @@ export class PublishedEventsComponent implements OnInit {
   constructor(private rest: EventServiceService) { }
 
   ngOnInit() {
-    this.getEvents();
+    //this.getEvents();
   }
+
   getEvents(){
     this.rest.getUserById("string").subscribe(
     (data: any) => {
-        this.events=data.events;
-      }
-      console.log(data);
-      console.log(this.events);
+      this.events=data.events;
     },
-    (err, any) => {});
+    (err: any) => {
+      alert('no se encontraron eventos');
+    });
   }
 
 }

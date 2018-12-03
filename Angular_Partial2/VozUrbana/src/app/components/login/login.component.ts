@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
   searchUserRequest(){
     this.rest.getUserById(this.userModel.mail).subscribe(
     (data: any) => {
-      console.log(data.pwd);
+      this.rest.setUser(data);
       if(this.userModel.pwd === data.pwd){
         if(data.type === "cop"){
           this.router.navigate(['/police']);

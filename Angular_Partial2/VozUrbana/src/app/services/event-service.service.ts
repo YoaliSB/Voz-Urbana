@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import {Evento} from '../models/evento';
+import {UserServiceService} from './user-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,12 +18,19 @@ export class EventServiceService {
 
   EVENT_URL = 'http://127.0.0.1:3000/eventos';
   USER_URL = 'http://127.0.0.1:3000/usuarios';
+  creds = ":";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, userService: UserServiceService) { 
+    let user = userService.getCurrentUser();
+    if(user!=null){
+      this.creds = user.mail + ":" + user.pwd;
+    }
+    console.log(this.creds);
+  }
 
   getEvents():Observable<any>{
     const httpOptions = {
-      headers: {'Authorization': "Basic " + btoa("string:PenaPena"),
+      headers: {'Authorization': "Basic " + btoa(this.creds),
       'Content-Type': 'application/json'
     }};
   // Make the HTTP request:
@@ -35,7 +43,7 @@ export class EventServiceService {
 
   getEvent(id): Observable<any> {
   const httpOptions = {
-      headers: {'Authorization': "Basic " + btoa("string:PenaPena"),
+      headers: {'Authorization': "Basic " + btoa(this.creds),
       'Content-Type': 'application/json'
     }};
   return this.http.get(this.EVENT_URL + '/' + id, httpOptions).pipe(
@@ -46,7 +54,7 @@ export class EventServiceService {
 
   postEvent(event : Evento):Observable<any>{
     const httpOptions = {
-      headers: {'Authorization': "Basic " + btoa("string:PenaPena"),
+      headers: {'Authorization': "Basic " + btoa(this.creds),
       'Content-Type': 'application/json'
     }};
     return this.http
