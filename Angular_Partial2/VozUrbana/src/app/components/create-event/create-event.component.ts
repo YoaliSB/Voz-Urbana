@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { EventServiceService } from '../../services/event-service.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { Event } from '../../models/event';
+import { Evento } from '../../models/evento';
 
 @Component({
   selector: 'app-create-event',
@@ -11,7 +11,7 @@ import { Event } from '../../models/event';
 })
 export class CreateEventComponent implements OnInit {
 
-  eventModel = new Event('id','Título','Dirección','Descripción','Link','Fecha');
+  eventModel = new Evento('id','Título','Dirección','Descripción','Link','Fecha');
 
   createEventForm = new FormGroup({
   	titulo: new FormControl(),
@@ -39,23 +39,40 @@ export class CreateEventComponent implements OnInit {
   }
 
   ngOnInit() {
-  	this.getEvent();
+  	//this.getEvent();
   }
 
   enviarFormulario(){
     let forma = this.createEventForm.value;
     this.eventModel.titulo = this.createEventForm.value.titulo;
     this.eventModel.direccion = this.createEventForm.value.direccion;
+    this.eventModel.descripcion = this.createEventForm.value.descripcion;
+    this.eventModel.link = this.createEventForm.value.link;
+    this.eventModel.fecha = this.createEventForm.value.fecha;
+    this.eventModel.tipo = "evento";
+    this.eventModel.resolved = false;
+    this.eventModel.id = "idevento2";
+    console.log(this.eventModel);
+    this.createEvent();
+  }
+
+  createEvent(){
+    this.rest.postEvent(this.eventModel).subscribe(
+      (res: any) => {
+        console.log('HTTP response', res);
+      },
+      (err: any) => {
+        console.log('HTTP Error', err, err.status);
+        alert('No se pudo crear el evento');
+      },
+      () => console.log('HTTP request completed.')
+    );
   }
 
   getEvent(){
     this.rest.getEvents().subscribe((data: any) => {
       console.log(data);
    });
-  }
-
-  get usuarioActual(){
-    return JSON.stringify(this.eventModel);
   }
 
   get titulo():any{

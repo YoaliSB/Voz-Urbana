@@ -22,13 +22,12 @@
                 <p>{{events.descripcion}}</p>
             </div>
             <div class="col-md-3 col-lg-3 col-sm-12 desc-buttons">
-                <button class="btn btn-primary" id="reportar" onclick="javascript:alert('Se llamará al policía más cercano'); window.location.href = 'tel:911';">911</button>
-                <button class="btn btn-primary" id="quejas" onclick="javascript:alert('Tu queja será tomada en cuenta');">Quejas</button>
+                <button class="btn btn-primary" id="reportar" (click)="modifyUser()">Reportar</button>
+                <button class="btn btn-primary" id="quejas" (click)="modifyUser()">Marcar resuelto</button>
             </div> 
         </div>
         <div class="row">
             <div class="col-md-6 col-lg-6 col-sm-12 link pb-4">
-                <button class="btn btn-primary" onclick="javascript:window.location.href = 'exploreEvent.html'">Más info</button>
             </div>
             <div class="col-md-6 col-lg-6 col-sm-12 sprites text-center">
                 <img alt="Twitter" class="sprite" src="../../../assets/img/twitter.png"/>

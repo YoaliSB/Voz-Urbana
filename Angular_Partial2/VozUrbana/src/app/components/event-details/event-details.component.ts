@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { Event } from '../../models/event';
+import { Evento } from '../../models/evento';
 import { EventServiceService } from 'src/app/services/event-service.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class EventDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private rest: EventServiceService) { }
 
-  events: Event = new Event('','','','','','');
+  events: Evento = new Evento('','','','','','', '');
 
   ngOnInit() {
   	this.route.params.subscribe(params => {
@@ -22,15 +22,8 @@ export class EventDetailsComponent implements OnInit {
   }
 
   getEvent(id: string) {
-    this.rest.getEvent(id).subscribe((data: any) => {
-    	for(var i=0;i<data.length;i++){
-
-    		if(data[i]["id"]==id){
-    			this.events=data[i];
-    		}
-    	}
-    	console.log(this.events);
-       //this.events = data;
+    this.rest.getEvent("idevento").subscribe((data: any) => {
+      this.events=data;
     });
   }
 

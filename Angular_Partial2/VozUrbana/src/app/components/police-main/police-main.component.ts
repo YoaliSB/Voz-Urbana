@@ -3,7 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { UserServiceService } from '../../services/user-service.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { User } from '../../models/user';
-import { Event } from '../../models/event';
+import { Evento } from '../../models/evento';
 import { EventServiceService } from 'src/app/services/event-service.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { EventServiceService } from 'src/app/services/event-service.service';
 })
 export class PoliceMainComponent implements OnInit {
 
-	events = new Array<Event>();
+	events = new Array<Evento>();
 
   constructor(private rest: EventServiceService) { }
 
