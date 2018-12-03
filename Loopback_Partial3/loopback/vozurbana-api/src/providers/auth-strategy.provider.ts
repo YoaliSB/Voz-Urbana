@@ -52,6 +52,7 @@ export class MyAuthStrategyProvider implements Provider<Strategy | undefined> {
   ) {
     try{
       let user = await this.userRepo.findById(username);
+      console.log(username + password + user.pwd)
       if(user.pwd === password){
         callback(null, user);
       }

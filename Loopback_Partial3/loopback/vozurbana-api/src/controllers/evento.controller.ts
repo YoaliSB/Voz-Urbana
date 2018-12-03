@@ -101,7 +101,7 @@ export class EventoController {
     return await this.eventoRepository.updateAll(evento, where);
   }
 
-  @authenticate('cop')
+  @authenticate('user')
   @get('/eventos/{id}', {
     responses: {
       '200': {
