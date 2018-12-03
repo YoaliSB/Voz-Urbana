@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Evento } from '../../models/evento';
 import { EventServiceService } from 'src/app/services/event-service.service';
+import { UserServiceService } from '../../services/user-service.service';
 
 @Component({
   selector: 'app-published-events',
@@ -12,19 +13,20 @@ import { EventServiceService } from 'src/app/services/event-service.service';
 export class PublishedEventsComponent implements OnInit {
 
   events:Evento[];
-  constructor(private rest: EventServiceService) { }
+  constructor(private rest: EventServiceService, private userRest: UserServiceService) { }
 
   ngOnInit() {
-    //this.getEvents();
+    let user = this.userRest.getCurrentUser();
+    this.getEvents(user.mail);
   }
 
-  getEvents(){
-    this.rest.getUserById("string").subscribe(
+  getEvents(mail: String){
+    this.rest.getEvents().subscribe(
     (data: any) => {
       this.events=data.events;
     },
     (err: any) => {
-      alert('no se encontraron eventos');
+      alert('No se encontraron eventos');
     });
   }
 
