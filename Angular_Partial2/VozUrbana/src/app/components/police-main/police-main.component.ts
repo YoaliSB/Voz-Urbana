@@ -32,7 +32,7 @@ export class PoliceMainComponent implements OnInit {
     this.rest.getEvents().subscribe((data: any) => {
       console.log(data);
       for(var i=0;i<data.length;i++){
-      	if(data[i]["tipo"]=="policial"){
+      	if(data[i]["tipo"]=="crimen"){
       		this.events.push(data[i]);
       	}
       }
