@@ -7,6 +7,7 @@ export class Evento {
 	fecha: string;
 	tipo: string;
 	resolved: boolean;
+	usuarioId: string;
 	
 	constructor(titulo: string, direccion: string, descripcion: string, link: string, fecha: string, tipo: string, resolved: boolean){
 		this.titulo = titulo;

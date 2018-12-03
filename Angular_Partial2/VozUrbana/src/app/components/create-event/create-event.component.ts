@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { EventServiceService } from '../../services/event-service.service';
+import { UserServiceService } from '../../services/user-service.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Evento } from '../../models/evento';
 
@@ -22,7 +23,7 @@ export class CreateEventComponent implements OnInit {
   	fotos: new FormControl()
   })
 
-  constructor(private rest: EventServiceService, private formBuilder: FormBuilder) { 
+  constructor(private rest: EventServiceService, private userRest: UserServiceService, private formBuilder: FormBuilder,  private router: Router) { 
   	this.createForm();
   }
   
@@ -39,7 +40,12 @@ export class CreateEventComponent implements OnInit {
   }
 
   ngOnInit() {
-  	//this.getEvent();
+    let user = this.userRest.getCurrentUser();
+    if(user == null){
+      this.router.navigate(['/ExploreEvents']);
+    } else{
+      this.eventModel.usuarioId = user.mail; 
+    }
   }
 
   enviarFormulario(){
@@ -51,7 +57,6 @@ export class CreateEventComponent implements OnInit {
     this.eventModel.fecha = this.createEventForm.value.fecha;
     this.eventModel.tipo = "evento";
     this.eventModel.resolved = false;
-    this.eventModel.id = "idevento2";
     console.log(this.eventModel);
     this.createEvent();
   }
