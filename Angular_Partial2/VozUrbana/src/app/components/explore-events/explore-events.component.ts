@@ -31,9 +31,7 @@ export class ExploreEventsComponent implements OnInit {
   getEvents(){
     this.rest.getEvents().subscribe(
     (data: any) => {
-      console.log(data);
       this.events=data;
-      console.log(this.events);
     },
     (err: any) => {
         console.log('HTTP Error', err, err.status);

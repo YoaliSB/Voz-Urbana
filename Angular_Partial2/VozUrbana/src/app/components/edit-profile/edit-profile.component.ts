@@ -49,13 +49,17 @@ export class EditProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.getUserById(//mail del monito);
+    let user = this.rest.getCurrentUser();
+    if(user == null){
+      this.router.navigate(['/ExploreEvents']);
+    }
+    this.getUserRequest();
   }
 
   getUserRequest(){
-    this.rest.getUserById("string@string.com").subscribe(
+    let user = this.rest.getCurrentUser();
+    this.rest.getUserById(user.mail).subscribe(
       (data: any) => {
-        console.log(data);
         this.nombre=data["name"];
         this.mail=data["mail"];
         this.psw=data["pwd"];
@@ -68,9 +72,10 @@ export class EditProfileComponent implements OnInit {
   }
 
   patchUserRequest(){
+    console.log("patch", this.userModel);
     this.rest.patchUser(this.userModel).subscribe(
       (data: any) => {
-        console.log(data);
+        alert("Editado exitosamente");
       },
       (err : any) => {
         console.log('HTTP Error', err, err.status);

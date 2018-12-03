@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Evento } from '../../models/evento';
 import { EventServiceService } from 'src/app/services/event-service.service';
@@ -11,19 +11,25 @@ import { EventServiceService } from 'src/app/services/event-service.service';
 })
 export class EventDetailsComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private rest: EventServiceService) { }
+  constructor(private route: ActivatedRoute, private rest: EventServiceService, private router: Router) { }
 
   events: Evento = new Evento('','','','','','evento',false);
+  id = "";
 
   ngOnInit() {
   	this.route.params.subscribe(params => {
-       this.getEvent(params.id);
+       this.id = params.id;
     });
+    this.getEvent();
   }
 
-  getEvent(id: string) {
-    this.rest.getEvent("idevento").subscribe((data: any) => {
+  getEvent() {
+    this.rest.getEvent(this.id).subscribe(
+    (data: any) => {
       this.events=data;
+    },
+    (err: any) => {
+        this.router.navigate(['/ExploreEvents']);
     });
   }
 
