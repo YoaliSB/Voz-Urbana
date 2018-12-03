@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Evento } from '../../models/evento';
 import { EventServiceService } from 'src/app/services/event-service.service';
@@ -21,7 +21,7 @@ export class EventDetailsComponent implements OnInit {
   @ViewChild('gmap') gmapElement: any;
   map: google.maps.Map;
 
-  constructor(private route: ActivatedRoute, private rest: EventServiceService) { }
+  constructor(private route: ActivatedRoute, private rest: EventServiceService, private router:Router) { }
 
   events: Evento = new Evento('','','','','','evento',false);
   id = "";
