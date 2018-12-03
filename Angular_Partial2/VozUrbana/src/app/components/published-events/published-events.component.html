@@ -4,7 +4,7 @@
                 <table class="table table-hover">
             <tbody>
               <tr *ngFor="let event of events; let i = index" [attr.data-index]="i">
-                  <td><a [routerLink]="['/event-details/', i+1]">{{event.titulo}}</a></td>
+                  <td><a [routerLink]="['/event-details/', event.id]">{{event.titulo}}</a></td>
               </tr>
             </tbody>
             

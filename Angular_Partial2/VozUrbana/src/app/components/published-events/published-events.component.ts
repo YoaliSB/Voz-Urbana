@@ -12,7 +12,7 @@ import { UserServiceService } from '../../services/user-service.service';
 })
 export class PublishedEventsComponent implements OnInit {
 
-  events:Evento[];
+  events:Evento[]  = [];
   constructor(private rest: EventServiceService, private userRest: UserServiceService) { }
 
   ngOnInit() {
@@ -20,10 +20,14 @@ export class PublishedEventsComponent implements OnInit {
     this.getEvents(user.mail);
   }
 
-  getEvents(mail: String){
+  getEvents(mail){
     this.rest.getEvents().subscribe(
     (data: any) => {
-      this.events=data.events;
+      for(var i=0;i<data.length;i++){
+        if(data[i]["usuarioId"]===mail){
+          this.events.push(data[i]);
+        }
+      }
     },
     (err: any) => {
       alert('No se encontraron eventos');
