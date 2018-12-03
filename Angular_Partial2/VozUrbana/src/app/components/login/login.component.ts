@@ -35,10 +35,10 @@ export class LoginComponent implements OnInit {
     let forma = this.loginForm.value;
     this.userModel.mail = this.loginForm.value.email;
     this.userModel.pwd = this.loginForm.value.password;
-    this.searchUser();
+    this.searchUserRequest();
   }
 
-  searchUser(){
+  searchUserRequest(){
     this.rest.getUserById(this.userModel.mail).subscribe(
     (data: any) => {
       console.log(data.pwd);
@@ -60,25 +60,11 @@ export class LoginComponent implements OnInit {
    });
   }
 
-  postUser(){
-    this.rest.postUser(this.userModel).subscribe(
-      (res: any) => {
-        console.log('HTTP response', res);
-        this.router.navigate(['/ExploreEvents']);
-      },
-      (err: any) => {
-        console.log('HTTP Error', err, err.status);
-        alert('No se pudo crear el usuario');
-      },
-      () => console.log('HTTP request completed.')
-    );
-  }
-
   ngOnInit() {
     console.log("login");
   }
 
-  getUser(){
+  getUserRequest(){
     this.rest.getUser().subscribe((data: any) => {
       console.log(data);
       this.users = data;

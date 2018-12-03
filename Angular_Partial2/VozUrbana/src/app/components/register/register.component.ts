@@ -13,10 +13,6 @@ import { RxwebValidators, RxFormBuilder } from '@rxweb/reactive-form-validators'
 })
 export class RegisterComponent implements OnInit {
 
-  ngOnInit(){
-  
-  }
-
   userModel = new User('nombre','example@mail.com','*****','user');
 
   registerForm = new FormGroup({
@@ -41,10 +37,10 @@ export class RegisterComponent implements OnInit {
     let forma = this.registerForm.value;
     this.userModel.mail = this.registerForm.value.email;
     this.userModel.pwd = this.registerForm.value.password;  
-    this.postUser();
+    this.postUserRequest();
   }
 
-  getUser(){
+  getUserRequest(){
     this.rest.getUser().subscribe((data: any) => {
       console.log(data);
    });
@@ -54,7 +50,7 @@ export class RegisterComponent implements OnInit {
     console.log("register");
   }
 
-  postUser(){
+  postUserRequest(){
     this.rest.postUser(this.userModel).subscribe(
       (res: any) => {
         console.log('HTTP response', res);

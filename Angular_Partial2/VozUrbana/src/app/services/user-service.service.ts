@@ -54,4 +54,12 @@ export class UserServiceService {
           return res;
         }));
   }
+
+  deleteUser(mail : String):Observable<any>{
+    return this.http
+      .delete(this.USER_URL + '/' + mail, this.httpOptions).pipe(
+        map(function(res){
+          return res;
+        }));
+  }
 }

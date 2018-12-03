@@ -3,7 +3,7 @@
 	<hr>
 	<h2>Puedes consultar y modificar a los usuarios aquí</h2><br>
 	<div class="register-form">
-		<form [formGroup]="adminForm" (ngSubmit)="enviarFormulario()">
+		<form [formGroup]="adminForm" (ngSubmit)="submitSearch()">
 			<div class="form-group">
 				<div *ngIf="email.errors?.required" class="required-mark"><br>*</div>
 				<p class="font-weight-bold" style="display:inline">Ingresa el correo del usuario</p>
@@ -20,7 +20,7 @@
 	    <p class="card-text">Tipo de usuario: {{userModel.type}}.</p>
 	    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
 	    	<div class="form-check">
-			  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+			  <input class="form-check-input" type="checkbox" id="isCopCheck" ng-true-value="1" ng-false-value="0" formControlName="isCop">
 			  <label class="form-check-label" for="defaultCheck1">
 			    Policía
 			  </label>

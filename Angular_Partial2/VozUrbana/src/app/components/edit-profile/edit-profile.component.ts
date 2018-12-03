@@ -45,14 +45,14 @@ export class EditProfileComponent implements OnInit {
     this.userModel.mail = this.editProfileForm.value.email;
     this.userModel.pwd = this.editProfileForm.value.password;
     this.userModel.type = "user";
-    this.patchUser();
+    this.patchUserRequest();
   }
 
   ngOnInit() {
     //this.getUserById(//mail del monito);
   }
 
-  getUser(){
+  getUserRequest(){
     this.rest.getUserById("string@string.com").subscribe(
       (data: any) => {
         console.log(data);
@@ -67,7 +67,7 @@ export class EditProfileComponent implements OnInit {
       });
   }
 
-  patchUser(){
+  patchUserRequest(){
     this.rest.patchUser(this.userModel).subscribe(
       (data: any) => {
         console.log(data);

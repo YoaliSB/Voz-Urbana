@@ -11,14 +11,14 @@ import { User } from '../../models/user';
 })
 export class AdminComponent implements OnInit {
 
-  userModel = new User('nombre','example@mail.com','*****','usuario');
+  userModel = new User(' ',' ',' ',' ');
 
   adminForm = new FormGroup({
     email: new FormControl()
   });
 
   editForm = new FormGroup({
-  	check: new FormControl()
+  	isCop: new FormControl()
   })
 
   modify = false;
@@ -36,21 +36,66 @@ export class AdminComponent implements OnInit {
 
   createForm2(){
   	this.editForm = this.formBuilder.group({
-  		check: new FormControl()
+  		isCop: new FormControl()
   	})
   }
 
-  enviarFormulario(){
+  submitSearch(){
     let forma = this.adminForm.value;
     this.userModel.mail = this.adminForm.value.email;
+    this.searchUser();
+  }
+
+  searchUser(){
+    this.rest.getUserById(this.userModel.mail).subscribe(
+    (data: any) => {
+      this.userModel.type = data.type;
+      this.userModel.name = data.name;
+      this.userModel.pwd = data.pwd;
+    },
+    (err: any) => {
+      console.log('HTTP Error', err, err.status);
+      this.userModel.type = "";
+      this.userModel.name = "";
+      this.userModel.pwd = "";
+      alert('No se encontró al usuario');
+   });
   }
 
   onSubmit(){
-    if(this.modify) {
-     console.log("Modificar usuario");
-    }else {
-      console.log("Eliminar usuario");
+    if(this.editForm.value.isCop == 1){
+      this.userModel.type = "cop";
     }
+    console.log(this.modify);
+    if(this.modify) {
+      this.patchUserRequest();
+    }else {
+      this.deleteUserRequest();
+    }
+  }
+
+  deleteUserRequest(){
+    this.rest.deleteUser(this.userModel.mail).subscribe(
+      (res: any) => {
+        console.log('HTTP response', res);
+      },
+      (err: any) => {
+        console.log('HTTP Error', err, err.status);
+        alert('No se pudo eliminar el usuario');
+      },
+      () => console.log('HTTP request completed.')
+    );
+  }
+
+  patchUserRequest(){
+    this.rest.patchUser(this.userModel).subscribe(
+      (data: any) => {
+        console.log(data);
+      },
+      (err : any) => {
+        console.log('HTTP Error', err, err.status);
+        alert('Hubo un error al realizar los cambios');
+      });
   }
 
   modifyUser(){
