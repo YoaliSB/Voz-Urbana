@@ -46,6 +46,10 @@ export class RegisterComponent implements OnInit {
    });
   }
 
+  ngOnInit(){
+    console.log("register");
+  }
+
   postUser(){
     this.rest.postUser(this.userModel).subscribe(
       (res: any) => {

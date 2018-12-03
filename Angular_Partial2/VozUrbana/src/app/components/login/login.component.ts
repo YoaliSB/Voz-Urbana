@@ -35,17 +35,47 @@ export class LoginComponent implements OnInit {
     let forma = this.loginForm.value;
     this.userModel.mail = this.loginForm.value.email;
     this.userModel.pwd = this.loginForm.value.password;
-    if(this.userModel.mail==this.users[1].mail){
-      this.router.navigate(['/police']);
-    }else if(this.userModel.mail==this.users[0].mail){
-      this.router.navigate(['/admin']);
-    }else{
-      this.router.navigate(['/ExploreEvents']);
-    }
+    this.searchUser();
+  }
+
+  searchUser(){
+    this.rest.getUserById(this.userModel.mail).subscribe(
+    (data: any) => {
+      console.log(data.pwd);
+      if(this.userModel.pwd === data.pwd){
+        if(data.type === "cop"){
+          this.router.navigate(['/police']);
+        }else if(data.type === 'admin'){
+          this.router.navigate(['/admin']);
+        }else{
+          this.router.navigate(['/ExploreEvents']);
+        }
+      } else{
+        alert('El usuario o la contraseña son incorrectos');
+      }
+    },
+    (err: any) => {
+      console.log('HTTP Error', err, err.status);
+      alert('El usuario o la contraseña son incorrectos');
+   });
+  }
+
+  postUser(){
+    this.rest.postUser(this.userModel).subscribe(
+      (res: any) => {
+        console.log('HTTP response', res);
+        this.router.navigate(['/ExploreEvents']);
+      },
+      (err: any) => {
+        console.log('HTTP Error', err, err.status);
+        alert('No se pudo crear el usuario');
+      },
+      () => console.log('HTTP request completed.')
+    );
   }
 
   ngOnInit() {
-    this.getUser();
+    console.log("login");
   }
 
   getUser(){
