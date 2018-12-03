@@ -9,6 +9,7 @@ import {UserServiceService} from './user-service.service';
   providedIn: 'root'
 })
 export class EventServiceService {
+  
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -19,6 +20,7 @@ export class EventServiceService {
   EVENT_URL = 'http://127.0.0.1:3000/eventos';
   USER_URL = 'http://127.0.0.1:3000/usuarios';
   creds = ":";
+
 
   constructor(private http: HttpClient, userService: UserServiceService) { 
     let user = userService.getCurrentUser();
@@ -59,6 +61,19 @@ export class EventServiceService {
     }};
     return this.http
       .post(this.EVENT_URL, event, httpOptions).pipe(
+        map(function(res){
+          return res;
+        }));
+  }
+
+  patchEvent(event : Evento):Observable<any>{
+    console.log(this.creds);
+    const httpOptions = {
+      headers: {'Authorization': "Basic " + btoa(this.creds),
+      'Content-Type': 'application/json'
+    }};
+    return this.http
+      .patch(this.EVENT_URL + '/' + event.id, event, this.httpOptions).pipe(
         map(function(res){
           return res;
         }));

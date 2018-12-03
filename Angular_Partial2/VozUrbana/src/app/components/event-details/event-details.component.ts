@@ -15,6 +15,25 @@ export class EventDetailsComponent implements OnInit {
 
   events: Evento = new Evento('','','','','','evento',false);
 
+  resolved = false;
+
+  patchEventRequest(){
+    this.rest.patchEvent(this.events).subscribe(
+      (data: any) => {
+        console.log(data);
+      },
+      (err : any) => {
+        console.log('HTTP Error', err, err.status);
+        alert('Hubo un error al realizar los cambios');
+      });
+  }
+
+  resolveEvent(){
+    this.resolved = true;
+    this.events.resolved = true;
+    this.patchEventRequest();
+  }
+
   ngOnInit() {
   	this.route.params.subscribe(params => {
        this.getEvent(params.id);

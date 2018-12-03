@@ -6,7 +6,6 @@ export class Evento extends Entity {
   @property({
     type: 'string',
     id: true,
-    required: true,
   })
   id: string;
 
